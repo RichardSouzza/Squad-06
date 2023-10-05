@@ -9,6 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  gap: 7vh;
   background-color: #ddd;
 }
 
@@ -35,7 +36,7 @@ header {
 
 header p {
   align-self: flex-end;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   color: #5b5b5b;
   text-wrap: nowrap;
 }
@@ -68,6 +69,54 @@ header #logo {
     max-width: fit-content;
     border-width: 5px;
   }
+}
+
+main {
+  flex: 1;
+  align-self: center;
+  width: 85%;
+  padding: 1rem;
+  border-radius: 10px;
+  background-image: linear-gradient(#fdfdfd, #e4e5e5);
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.red {
+  color: #f00;
+}
+
+fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 1rem;
+  gap: 1vw;
+}
+
+legend {
+  padding: 0.25rem;
+  font-size: 0.7rem;
+}
+
+label {
+  font-size: 0.9rem;
+}
+
+input[type=text], select {
+  padding: 0.5rem;
+  border: 1px solid #c4c0b9;
+  background-image: linear-gradient(#f1eee9, #fdfdfd);
+}
+
+input[type=submit] {
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #197f9e;
+  color: #fff;
 }
 
 footer {

@@ -16,6 +16,22 @@
     </div>
     <div class="fill"></div>
   </header>
+  <main>
+    <form>
+      <fieldset>
+        <legend class="bold">Filtro</legend>
+        <label class="bold" for="taxpayer">CPF/CNPJ do Contribuinte: <span class="red">*</span></label>
+        <input type="text" id="taxpayer" name="taxpayer">
+        <select name="filter" id="filter">
+          <option value="null">SELECIONE UM TRIBUTO</option>
+          <option value="iptu-g">IPTU - IPTU GRAND(100.00%)</option>
+          <option value="aluguel2">ALUGUEL 2 - ALUGUEL(1.50%)</option>
+          <option value="lix">LIX - COLETA DE LIXO(1.00%)</option>
+        </select>
+        <input type="submit" value="Filtrar">
+      </fieldset>
+    </form>
+  </main>
   <footer>
     <div class="fill"></div>
     <img src="static/images/footer.png">
