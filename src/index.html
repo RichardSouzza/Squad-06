@@ -2,39 +2,51 @@
 <html>
 <head>
   <meta charset="UTF-8" />
-  <title>title</title>
+  <title>Contribuinte</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link rel="stylesheet" href="static/styles/style.css">
 </head>
 <body>
   <header>
-    <img id="header-img" src="static/images/header.png">
-    <div class="fill"></div>
-    <div id="logo-container">
-      <p>DEMONSTRACAO LTDA</p>
-      <img id="logo" src="static/images/logo.jpeg">
+    <div id="header-top">
+      <div class="sidebar">
+        <button class="dropdown-btn"><img class="btn-icon" src="static/images/list-pointers.svg"></button>
+        <div class="dropdown-content" id="dropdown-content"></div>
+      </div>
+
+      <img id="logo" src="static/images/logo.png" alt="Ágape logo">
+      
+      <div id="flex-end">
+        <div class="notification">
+          <button class="notification-btn"><img class="btn-icon" src="static/images/bell.svg"></button>
+        </div>
+
+        <div class="exit">
+          <button class="exit-btn"><p>Sair</p></button>
+        </div>
+      </div>
     </div>
-    <div class="fill"></div>
+    <hr>
+    <div id="header-center">
+      <div>
+        <p class="welcome">Bem Vindo!</p>
+        <p class="credential">CPF / CNPJ: 894.076.010-72</p>
+        <p class="credential">CONTRIBUINTE: CONTRIBUINTE TESTE UNIT</p>
+      </div>
+
+      <div class="filter">
+        <select><option>Selecionar Inscrição</option></select>
+        <select><option>Selecione o tipo DAM</option></select>
+      </div>
+    </div>
+    
+    <div id="header-bottom">
+      <button>Todos</button>
+      <button>A vencer (0)</button>
+      <button>Vencidos (3)</button>
+    </div>
   </header>
-  <main>
-    <form>
-      <fieldset>
-        <legend class="bold">Filtro</legend>
-        <label class="bold" for="taxpayer">CPF/CNPJ do Contribuinte: <span class="red">*</span></label>
-        <input type="text" id="taxpayer" name="taxpayer">
-        <select name="filter" id="filter">
-          <option value="null">SELECIONE UM TRIBUTO</option>
-          <option value="iptu-g">IPTU - IPTU GRAND(100.00%)</option>
-          <option value="aluguel2">ALUGUEL 2 - ALUGUEL(1.50%)</option>
-          <option value="lix">LIX - COLETA DE LIXO(1.00%)</option>
-        </select>
-        <input type="submit" value="Filtrar">
-      </fieldset>
-    </form>
-  </main>
-  <footer>
-    <div class="fill"></div>
-    <img src="static/images/footer.png">
-  </footer>
+  
+  <script src="static/scripts/script.js"></script>
 </body>
 </html>
