@@ -150,6 +150,16 @@ thead th {
   font-family: Montserrat, Verdana, sans-serif;
 }
 
+thead th div {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+thead th div p, thead th div img {
+  cursor: pointer;
+}
+
 tbody .space {
   height: 2vh;
   border: none;
@@ -167,6 +177,7 @@ tbody td {
   padding: 0.875rem 2rem;
   background-color: #fefefe;
   background-clip: padding-box;
+  text-align: center;
   font-family: Montserrat, Verdana, sans-serif;
 }
 
