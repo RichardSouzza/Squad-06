@@ -128,7 +128,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1vh 0;
 }
 
 .responsive-table {
@@ -138,7 +137,7 @@ main {
 }
 
 table {
-  margin: auto;
+  margin: 1vh auto;
   border-collapse: collapse;
 }
 
@@ -176,7 +175,6 @@ tbody .space {
 tbody td {
   padding: 0.875rem 2rem;
   background-color: #fefefe;
-  background-clip: padding-box;
   text-align: center;
   font-family: Montserrat, Verdana, sans-serif;
 }
