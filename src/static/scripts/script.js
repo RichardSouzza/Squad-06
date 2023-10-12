@@ -1,6 +1,5 @@
 function addRedBorders() {
     const body = document.getElementsByTagName('body')[0];
-    console.log(body);
     const DAMs = document.getElementsByClassName('dam-row');
     for (let dam of DAMs) {
         const damRect = dam.getBoundingClientRect();
