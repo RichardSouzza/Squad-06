@@ -97,14 +97,14 @@ header hr {
   line-height: 1.5rem;
 }
 
-#header-center .filter {
+#header-center .header-right {
   display: flex;
   flex-direction: column;
   justify-content: end;
   gap: 2vh;
 }
 
-.filter select {
+.header-right select {
   border: none;
   background: none;
   font-size: 1.1rem;
