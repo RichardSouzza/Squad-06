@@ -8,6 +8,9 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: #f4f4f4;
 }
 
@@ -199,4 +202,49 @@ tbody td:last-child {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  padding: 1rem 0;
+  font-family: Montserrat, Verdana, sans-serif;
+}
+
+footer #contact {
+  display: flex;
+  width: 5rem;
+  position: absolute;
+  right: 80vw;
+}
+
+footer #contact img {
+  width: 100%;
+  height: 100%;
+}
+
+footer #contact ul {
+  list-style: none;
+  margin-left: 1.25rem;
+  font-weight: 500;
+}
+
+footer #sac {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 4rem;
+  position: absolute;
+  right: 14vw;
+  bottom: 4vw;
+  gap: 2vh;
+  color: #0B99C9;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+footer #sac img {
+  height: 100%;
 }
