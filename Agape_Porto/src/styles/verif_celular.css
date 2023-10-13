@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@700&display=swap');
+
+:root {
+    --cor-fundo: #F4F4F4;
+    --cor-secundaria: #1F629D;
+    --cor-terciaria: #FFFFFF;
+    --cor-borda:#A6A6A6;
+    --cor-fonte1: #0B99C9;
+
+    --fonte-primaria: 'Inter', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif
+}
+
+
+body{
+    background-color: var(--cor-fundo);
+    margin: 0;
+}
+.retorno{
+    margin-top: 80px;
+    padding-right: 1800px;
+}
+
+.cabecalho{
+    background-color: var(--cor-secundaria);
+    height: 298px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.cabecalho__logo{
+    position: fixed;
+    margin-top: 55px;
+}
+
+.principal{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 249px;
+}
+
+.principal__login{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--cor-terciaria);
+    width: 427px;
+    height: 439px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.principal__login__label{
+    color: var(--cor-fonte1);
+    font-family: var(--fonte-primaria);
+    font-size: 12px;
+    margin-top: 21px;
+    margin-left: 30px;
+    height: 27px;
+}
+
+.principal__login__form{
+    margin-left: 30px;
+    margin-right: 35px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.principal__login__codigo{
+    width: 70px;
+    height: 70px; 
+    text-align: center;
+    border: 1px solid #ccc;
+    font-family: var(--fonte-primaria);
+    color: #2C2C2C;
+    font-size: 18px;
+    font-weight: 300;
+
+
+}
+
+.principal__login__verifbotao{
+    display: flex;
+    width: 362px;
+    padding: 14px 0px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 1.5px solid var(--cor-borda);
+    background: var(--cor-fonte1);
+    box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.25);
+    color: var(--cor-terciaria);
+    font-family: var(--fonte-primaria);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.72px;
+    margin: 29px 35px 11px 30px;
+}
+
+#tentativas{
+    color: var(--cor-fonte1);
+    font-family: var(--fonte-primaria);
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0 0 24px 42px;
+    text-decoration: none;
+}
+
+.tentativas__restantes{
+    color: red;
+    font-family: var(--fonte-primaria);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.principal__login__tempo{
+    color: var(--cor-fonte1);
+    font-family: var(--fonte-primaria);
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0 0 23px 42px;
+}
+
+.principal__login__email{
+    color: var(--cor-fonte1);
+    font-family: var(--fonte-primaria);
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0 0 23px 42px;
+    width: 332px;
+}
+
+#tempoRestante{
+    color: red;
+    font-family: var(--fonte-primaria);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#reenviarCodigo{
+    width: 362px;
+    height: 50px;
+    border-radius: 4px;
+    border: 0.5px solid var(--cor-borda);
+    background: #FFF;
+    color: #0B99C9;
+    font-family: var(--fonte-primaria);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30px;
+}
+
+.principal__login__outraforma{
+    width: 362px;
+    height: 50px;
+    border-radius: 4px;
+    border: 0.5px solid var(--cor-borda);
+    background: #FFF;
+    color: #0B99C9;
+    font-family: var(--fonte-primaria);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px 0  0 30px;
+    text-decoration: none;
+}
+
+.espaco__vazio{
+    height: 54vh
+}
+
+.rodape{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 37px;
+}
+
+.rodape__espacovazio{
+    width: 173px;
+    height: 106px;
+}
+
+.rodape__imagens1{
+    display: flex;
+    align-items: center;
+}
+
+.rodape__imagens2{
+    text-align: center;
+}
+
+.rodape__imagens2__texto{
+color: var(--cor-fonte1);
+font-family: var(--fonte-secundaria);
+font-size: 15px;
+font-style: normal;
+font-weight: 700;
+line-height: 24px;
+letter-spacing: -0.225px;
+}
