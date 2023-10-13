@@ -26,7 +26,7 @@ function addRedBorders() {
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
         addRedBorders();
-    }, 500);
+    }, 2000);
 });
 
 
@@ -86,7 +86,7 @@ function sendByEmail() {
 
 
 function downloadDAM() {
-    const damUrl = 'static/data/DAM.pdf';
+    const damUrl = '../static/data/DAM.pdf';
     var a = document.createElement('a');
     a.href = damUrl;
     a.download = 'DAM.pdf';
@@ -95,6 +95,6 @@ function downloadDAM() {
 
 
 function printDAM() {
-    const damUrl = 'static/data/DAM.pdf';
+    const damUrl = '../static/data/DAM.pdf';
     window.location.href = damUrl;
 }
