@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     if (codigoDigitado === codigoCorreto) {
-      window.location.href = 'confirm.html'; // Redirecionar para a próxima página
+      window.location.href = 'client'; // Redirecionar para a próxima página
     } else {
       tentativasRestantes--;
       if (tentativasRestantes > 0) {
