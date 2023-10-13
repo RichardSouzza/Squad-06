@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Contribuinte</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="stylesheet" href="static/styles/style.css">
+</head>
+<body>
+  <header>
+    <div id="header-top">
+      <div class="sidebar">
+        <button class="dropdown-btn"><img class="btn-icon" src="static/images/list-pointers.svg"></button>
+        <div class="dropdown-content" id="dropdown-content"></div>
+      </div>
+
+      <img id="logo" src="static/images/logo.png" alt="Ágape logo">
+      
+      <div id="flex-end">
+        <div class="notification">
+          <button class="notification-btn"><img class="btn-icon" src="static/images/bell.svg"></button>
+        </div>
+
+        <div class="exit">
+          <button class="exit-btn"><p>Sair</p></button>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div id="header-center">
+      <div>
+        <p class="welcome">Bem Vindo!</p>
+        <p class="credential">CPF / CNPJ: 894.076.010-72</p>
+        <p class="credential">CONTRIBUINTE: CONTRIBUINTE TESTE UNIT</p>
+      </div>
+
+      <div class="header-right">
+        <select><option>Selecionar Inscrição</option></select>
+        <select><option>Selecione o tipo DAM</option></select>
+      </div>
+    </div>
+    
+    <div id="header-bottom">
+      <button class="raised-button">Todos</button>
+      <button class="raised-button">A vencer (0)</button>
+      <button class="raised-button">Vencidos (3)</button>
+    </div>
+  </header>
+  
+  <main>
+    <div class="responsive-table">
+      <table id="dam-table">
+        <thead>
+          <tr>
+            <th><div><p>Tributo</p><img src="static/images/code-01.svg"></div></th>
+            <th><div><p>Competência</p><img src="static/images/code-01.svg"></div></th>
+            <th><div><p>Vencimento</p><img src="static/images/code-01.svg"></div></th>
+            <th><div><p>Valor</p><img src="static/images/code-01.svg"></div></th>
+            <th><div><p>Cobrança</p><img src="static/images/code-01.svg"></div></th>
+            <th><div><p>Parcela</p><img src="static/images/code-01.svg"></div></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="dam-row">
+            <!-- <div class="red-border"></div> -->
+            <td>IPTU - IPTU GRAND(100.00%)</td>
+            <td>Setembro de 2023</td>
+            <td>25/09/2023</td>
+            <td>1.000,00</td>
+            <td class="text-blue cursor-pointer">Gerar</td>
+            <td class="text-blue cursor-pointer">Exibir</td>
+          </tr>
+          <tr class="space"></tr>
+          <tr class="dam-row">
+            <td>ALUGUEL 2 - ALUGUEL(1.50%)</td>
+            <td>Setembro de 2023</td>
+            <td>15/09/2023</td>
+            <td>17,00</td>
+            <td class="text-blue cursor-pointer">Gerar</td>
+            <td class="text-blue cursor-pointer"></td>
+          </tr>
+          <tr class="space"></tr>
+          <tr class="dam-row">
+            <td>LIX - COLETA DE LIXO(1.00%)</td>
+            <td>Setembro de 2023</td>
+            <td>15/09/2023</td>
+            <td>2,00</td>
+            <td class="text-blue cursor-pointer">Gerar</td>
+            <td class="text-blue cursor-pointer"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <footer>
+    <div id="contact">
+      <img src="static/images/logo.png">
+      <ul>
+        <li>Suporte</li>
+        <li>Contato</li>
+        <li>Reclamações</li>
+        <li>Sugestões</li>
+      </ul>
+    </div>
+    <div>
+      <img src="static/images/digital-certify.svg">
+    </div>
+    <div id="sac">
+      <p>Em que posso ajudar?</p>
+      <img src="static/images/sac.png">
+    </div>
+  </footer>
+  <script src="static/scripts/script.js"></script>
+</body>
+</html>
