@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@700&display=swap');
 
 :root {
@@ -9,7 +10,6 @@
     --cor-fonte: #000;
     --fonte-primaria: 'Inter', sans-serif;
 }
-
 
 body{
     background-color: var(--cor-fundo);
@@ -62,13 +62,14 @@ body{
 }
 
 .principal__login__input{
+    top: 297px;
     width: 345px;
     height: 50px;
     flex-shrink: 0;
     border-radius: 4px;
     border: 0.5px solid var(--cor-borda);
-    background: #FFF;
-    margin: 0 44px 20px 43px;
+    background: #FFFFFF;
+    margin: 10px 44px 20px 43px;
 }
 
 .principal__login__botao{
@@ -176,7 +177,6 @@ div.verificacao-login{
     
 }
 
-
 .texto-edit{
     color: #2C2C2C;
     font-family: Inter;
@@ -189,7 +189,8 @@ div.verificacao-login{
     padding-top: 10px;
     padding-left: 50px;
     margin-bottom: 12px;
-    
-    
 }
 
+.formulario-config{
+    margin-top: 5%;
+}
