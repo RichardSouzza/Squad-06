@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>DAM - Documento de Arrecadação Municipal</title>
+  <link rel="icon" type="image/x-icon" href="../static/images/favicon.ico">
+  <link rel="stylesheet" href="../static/styles/style.css">
+</head>
+<body>
+  <header>
+    <div id="header-top">
+      <div class="sidebar">
+        <button class="dropdown-btn"><img class="btn-icon" src="../static/images/list-pointers.svg"></button>
+        <div class="dropdown-content" id="dropdown-content"></div>
+      </div>
+
+      <img id="logo" src="../static/images/logo.png" alt="Ágape logo">
+      
+      <div id="flex-end">
+        <div class="notification">
+          <button class="notification-btn"><img class="btn-icon" src="../static/images/bell.svg"></button>
+        </div>
+
+        <div class="exit">
+          <button class="exit-btn"><p>Sair</p></button>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div id="header-center">
+      <div>
+        <p class="welcome">Bem Vindo!</p>
+        <p class="credential">CPF / CNPJ: 894.076.010-72</p>
+        <p class="credential">CONTRIBUINTE: CONTRIBUINTE TESTE UNIT</p>
+      </div>
+
+      <div class="header-right">
+      </div>
+    </div>
+    
+    <div class="flex-end" id="header-bottom">
+      <button class="icon-button" onclick="showWhatsAppAlert()"><img src="../static/images/whatsapp.svg"></button>
+      <button class="icon-button" onclick="showEmailAlert()"><img src="../static/images/gmail.svg"></button>
+      <button class="icon-button" onclick="downloadDAM()"><img src="../static/images/download.svg"></button>
+      <button class="icon-button" onclick="printDAM()"><img src="../static/images/print.svg"></button>
+    </div>
+  </header>
+
+  <main>
+    <img src="../static/images/DAM.png">
+    <div class="alert-box" id="whatsapp-alert">
+      <div>
+        <p class="text-red">Você deseja enviar o DAM por WhatsApp?</p>
+        <button onclick="sendByWhatsApp()">ENVIAR</button>
+      </div>
+    </div>
+    <div class="alert-box" id="email-alert">
+      <div>
+        <p class="text-red">Você deseja enviar o DAM por Email?</p>
+        <button onclick="sendByEmail()">ENVIAR</button>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <div id="contact">
+      <img src="../static/images/logo.png">
+      <ul>
+        <li>Suporte</li>
+        <li>Contato</li>
+        <li>Reclamações</li>
+        <li>Sugestões</li>
+      </ul>
+    </div>
+    <div>
+      <img src="../static/images/digital-certify.svg">
+    </div>
+    <div id="sac">
+      <p>Em que posso ajudar?</p>
+      <img src="../static/images/sac.png">
+    </div>
+  </footer>
+  <script src="../static/scripts/script.js"></script>
+</body>
+</html>

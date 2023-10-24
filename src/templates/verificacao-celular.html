@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="static/styles/verif_celular.css">
+    <script src="static/scripts/verif_celular.js"></script>
+    <title>Verificação de Identidade</title>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div>
+            <a href="login-principal.html"><img class="retorno" src="static/images/retorno.png" alt=""></a>
+        </div>
+        <div class="cabecalho__logo">
+            <img src="static/images/logo.png">
+        </div>
+    </header>
+    <main class="principal">
+        <div class="principal__login">
+            <label class="principal__login__label" for="login">Informe o código recebido abaixo</label>
+            <form class="principal__login__form">
+              <input class="principal__login__codigo" type="text" pattern="[0-9]" maxlength="1">
+              <input class="principal__login__codigo" type="text" pattern="[0-9]" maxlength="1">
+              <input class="principal__login__codigo" type="text" pattern="[0-9]" maxlength="1">
+              <input class="principal__login__codigo" type="text" pattern="[0-9]" maxlength="1">
+            </form>
+            <button class="principal__login__verifbotao" id="avancarBotao" onclick="window.location.href='client'">AVANÇAR</button>
+            <p id="tentativas">Você possui <span id="numeroDestacado" class="tentativas__restantes">5</span> tentativas restantes.</p>
+            <p class="principal__login__tempo">Aguarde <span id="tempoRestante">00:59 </span>para pedir um novo código</p>
+            <button id="reenviarCodigo" onclick="reenviarCodigo()"><img src="static/images/Undo.png"> REENVIAR CÓDIGO</button>
+            <a href="" class="principal__login__outraforma">RECEBER DE OUTRAS FORMAS</a>
+          </div>
+        </div>
+    </main>
+    <div class="espaco__vazio"></div>
+    <footer class="rodape">
+        <div class="rodape__espacovazio"></div>
+        <div class="rodape__imagens1">
+            <img src="static/images/seguro.png"><img src="static/images/norton.png">
+        </div>
+        <div class="rodape__imagens2">
+            <p class="rodape__imagens2__texto">Em que posso ajudar?</p>
+            <img src="static/images/ajuda.png">
+        </div>
+    </footer>
+</body>
+</html>
