@@ -20,7 +20,7 @@ document.getElementById("validationForm").addEventListener("submit", function (e
     const value = input.value.replace(/\D/g, ''); // Remove caracteres não numéricos
 
     if (isValidCpfCnpj(value)) {
-        window.location.href = "templates\contribuinte.html";
+        window.location.href = "src/templates/contribuinte.html";
     } else {
         errorMessage.textContent = alert("CPF ou CNPJ inválido. Por favor, verifique o valor digitado.");
     }
