@@ -2,15 +2,13 @@
 
 :root {
     --cor-fundo: #F4F4F4;
+    --cor-primaria: #0B99C9;
     --cor-secundaria: #1F629D;
     --cor-terciaria: #FFFFFF;
     --cor-borda:#A6A6A6;
-    --cor-fonte1: #0B99C9;
-
-
+    --cor-fonte: #000;
     --fonte-primaria: 'Inter', sans-serif;
 }
-
 
 body{
     background-color: var(--cor-fundo);
@@ -28,7 +26,6 @@ body{
     display: flex;
     justify-content: center;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
 }
 
 .cabecalho__logo{
@@ -54,7 +51,7 @@ body{
 }
 
 .principal__login__label{
-    color: var(--cor-fonte1);
+    color: var(--cor-fonte);
     font-family: var(--fonte-primaria);
     font-size: 14px;
     margin-top: 21px;
@@ -63,13 +60,14 @@ body{
 }
 
 .principal__login__input{
+    top: 297px;
     width: 345px;
     height: 50px;
     flex-shrink: 0;
     border-radius: 4px;
     border: 0.5px solid var(--cor-borda);
-    background: #FFF;
-    margin: 0 44px 20px 43px;
+    background: #FFFFFF;
+    margin: 10px 44px 20px 43px;
 }
 
 .principal__login__botao{
@@ -80,7 +78,7 @@ body{
     align-items: center;
     border-radius: 20px;
     border: 1.5px solid var(--cor-borda);
-    background: var(--cor-fonte1);
+    background: var(--cor-primaria);
     box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.25);
     color: var(--cor-terciaria);
     font-family: var(--fonte-primaria);
@@ -90,15 +88,23 @@ body{
     line-height: normal;
     letter-spacing: 0.72px;
     margin: 0 48px 20px 53px;
+    cursor: pointer;
 }
 
 .principal__login__texto{
-    color: var(--cor-fonte1);
+    color: var(--cor-fonte);
     font-family: var(--fonte-primaria);
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     margin: 0 0 21px 43px;
+}
+
+.principal__login__ancora {
+    color: var(--cor-primaria);
+    font-size: 14px;
+    font-weight: 700;
+    font-family: var(--fonte-primaria);
     text-decoration: none;
 }
 
@@ -128,7 +134,7 @@ body{
 }
 
 .rodape__imagens2__texto{
-color: var(--cor-fonte1);
+color: var(--cor-primaria);
 font-family: 'Montserrat', sans-serif;
 font-size: 15px;
 font-style: normal;
@@ -152,6 +158,10 @@ div.verificacao-login{
     margin-bottom: 8px;
 }
 
+.div-borde * {
+    cursor: pointer;
+}
+
 .caixa-selecao{
     fill: #FFF;
     stroke-width: 0.5px;
@@ -165,7 +175,6 @@ div.verificacao-login{
     
 }
 
-
 .texto-edit{
     color: #2C2C2C;
     font-family: Inter;
@@ -178,7 +187,8 @@ div.verificacao-login{
     padding-top: 10px;
     padding-left: 50px;
     margin-bottom: 12px;
-    
-    
 }
 
+.formulario-config{
+    margin-top: 5%;
+}

@@ -1,16 +1,12 @@
 import Bell from '../assets/images/bell.svg'
 import Logo from '../assets/images/logo.png'
-import ListPointers from '../assets/images/list-pointers.svg'
 import '../assets/styles/style.css'
 
 export default function ClientHeader() {
   return (
     <header>
       <div id="header-top">
-        <div className="sidebar">
-          <button className="dropdown-btn"><img className="btn-icon" src={ListPointers} /></button>
-          <div className="dropdown-content" id="dropdown-content"></div>
-        </div>
+        <div className="sidebar"></div>
 
         <img id="logo" src={Logo} alt="Ágape logo" />
         
@@ -27,7 +23,7 @@ export default function ClientHeader() {
       <hr />
       <div id="header-center">
         <div>
-          <p className="welcome">Bem Vindo!</p>
+          <p className="welcome">BEM-VINDO!</p>
           <p className="credential">CPF / CNPJ: 894.076.010-72</p>
           <p className="credential">CONTRIBUINTE: CONTRIBUINTE TESTE UNIT</p>
         </div>

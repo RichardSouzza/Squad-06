@@ -32,11 +32,6 @@ header button {
   height: calc(94px - 15%);
 }
 
-.dropdown-btn {
-  margin-top: 4.5vh;
-  height: 50px;
-}
-
 .notification-btn {
   height: 30px;
 }
