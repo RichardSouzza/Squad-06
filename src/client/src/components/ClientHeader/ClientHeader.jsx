@@ -1,22 +1,22 @@
-import Bell from '../assets/images/bell.svg'
-import Logo from '../assets/images/logo.png'
-import '../assets/styles/style.css'
+import Bell from '../../assets/images/bell.svg';
+import Logo from '../../assets/images/logo.svg';
+import './ClientHeader.css';
 
 export default function ClientHeader() {
   return (
-    <header>
+    <header className="ClientHeader">
       <div id="header-top">
-        <div className="sidebar"></div>
+        <div></div>
 
-        <img id="logo" src={Logo} alt="Ágape logo" />
+        <img className="logo" src={Logo} alt="Logo Ágape" />
         
         <div id="flex-end">
           <div className="notification">
-            <button className="notification-btn"><img className="btn-icon" src={Bell} /></button>
+            <button className="notification-button"><img className="button-icon" src={Bell} alt="Sino de notificação" /></button>
           </div>
 
           <div className="exit">
-            <button className="exit-btn"><p>Sair</p></button>
+            <button className="exit-button"><p>Sair</p></button>
           </div>
         </div>
       </div>
@@ -28,7 +28,7 @@ export default function ClientHeader() {
           <p className="credential">CONTRIBUINTE: CONTRIBUINTE TESTE UNIT</p>
         </div>
 
-        <div className="header-right">
+        <div id="header-right">
           <select><option>Selecionar Inscrição</option></select>
           <select><option>Selecione o tipo DAM</option></select>
         </div>
