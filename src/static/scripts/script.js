@@ -98,3 +98,46 @@ function printDAM() {
     const damUrl = '../static/data/DAM.pdf';
     window.location.href = damUrl;
 }
+
+
+
+
+// Ajusta o conteúdo das células nas colunas Tributo e Competência
+var tributoCells = document.querySelectorAll("#dam-table tbody tr.dam-row td:nth-child(1)");
+var competenciaCells = document.querySelectorAll("#dam-table tbody tr.dam-row td:nth-child(2)");
+
+for (var i = 0; i < tributoCells.length; i++) {
+  tributoCells[i].textContent = tributoCells[i].textContent;
+}
+
+for (var i = 0; i < competenciaCells.length; i++) {
+  competenciaCells[i].textContent = competenciaCells[i].textContent;
+}
+
+// Ajusta o formato da coluna de Vencimento para data formatada
+{
+  var vencimentoColumn = document.querySelector("#vencimento");
+  var vencimentoCells = document.querySelectorAll("#dam-table tbody tr.dam-row td:nth-child(3)");
+  var dateFormatOptions = { day: "2-digit", month: "2-digit", year: "numeric" };
+
+  for (var i = 0; i < vencimentoCells.length; i++) {
+    var dateString = vencimentoCells[i].textContent;
+    var date = new Date(dateString);
+    var formattedDate = date.toLocaleDateString("pt-BR", dateFormatOptions);
+    vencimentoCells[i].textContent = formattedDate;
+  }
+}
+
+// Ajusta o formato da coluna Valor para número formatado
+var valorCells = document.querySelectorAll("#dam-table tbody tr.dam-row td:nth-child(4)");
+
+for (var i = 0; i < valorCells.length; i++) {
+  var valorString = valorCells[i].textContent;
+  var valorNumerico = parseFloat(valorString.replace(/[^0-9,\.]/g, '').replace(',', '.'));
+  var valorFormatado = valorNumerico.toLocaleString("pt-BR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+
+  valorCells[i].textContent = valorFormatado;
+}

@@ -157,12 +157,15 @@ table {
   border-collapse: collapse;
 }
 
+
+
 thead th {
   color: #141414;
   font-size: 1rem;
   font-weight: 600;
   padding: 0.25rem 0;
   font-family: Montserrat, Verdana, sans-serif;
+
 }
 
 thead th div {
@@ -193,6 +196,7 @@ tbody td {
   background-color: #fefefe;
   text-align: center;
   font-family: Montserrat, Verdana, sans-serif;
+  text-align: right;
 }
 
 tbody td:first-child {
@@ -301,4 +305,8 @@ footer #sac {
 
 footer #sac img {
   height: 100%;
+}
+
+.valor-column {
+  text-align: right;
 }
