@@ -27,27 +27,7 @@ CPF: 894.076.010-72
 1. Ao acessar o link, selecione o módulo de 2ª Via DAM;
 2. Logo após, preencha o CPF do contribuinte e filtre as informações.
 
-## Execução React
-
-1. Acesse a pasta `client`:
-
-```sh
-cd src/client
-```
-
-2. Instale as dependências:
-
-```sh
-npm install
-```
-
-3. Execute o aplicativo:
-
-```sh
-npm run dev
-```
-
-## Execução Flask
+## Execução
 
 1. Instale as dependências:
 

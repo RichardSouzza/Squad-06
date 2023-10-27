@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@700&display=swap');
 
 :root {
@@ -26,6 +27,7 @@ body{
     display: flex;
     justify-content: center;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
 }
 
 .cabecalho__logo{
