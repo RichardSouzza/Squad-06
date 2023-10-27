@@ -18,11 +18,13 @@
     </header>
     <main class="principal">
         <div class="principal__login">
-                <label class="principal__login__label" for="login">Entrar com CPF ou CNPJ:</label>
-                <input class="principal__login__input" id="identification" type="text">
-                <button class="principal__login__botao" onclick="window.location.href='client'">ENTRAR</button>
-                <p class="principal__login__texto">Não consegue acessar? <a href="verify-email" class="principal__login__ancora">Clique aqui.</a></p>
-            </div>
+            <form class="formulario-config" id="validationForm">
+                <label for="identification" class="principal__login__label">Entrar com CPF ou CNPJ:</label>
+                <input class="principal__login__input" type="text" id="identification" name="cpfCnpj" autocomplete="off"
+                    required>
+                <button class="principal__login__botao" type="submit">Entrar</button>
+            </form>
+            <p class="principal__login__texto">Não consegue acessar? <a href="verify-email" class="principal__login__ancora">Clique aqui.</a></p>
         </div>
     </main>
     <div class="espaco__vazio"></div>
