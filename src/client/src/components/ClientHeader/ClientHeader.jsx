@@ -1,5 +1,4 @@
 import Bell from '../../assets/images/bell.svg';
-import Logo from '../../assets/images/logo.svg';
 import './ClientHeader.css';
 
 export default function ClientHeader() {
@@ -8,7 +7,7 @@ export default function ClientHeader() {
       <div id="header-top">
         <div></div>
 
-        <img className="logo" src={Logo} alt="Logo Ágape" />
+        <div id="fictitious-logo">Logo Fictício</div>
         
         <div id="flex-end">
           <div className="notification">

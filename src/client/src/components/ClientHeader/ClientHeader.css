@@ -28,6 +28,12 @@
   width: 80%;
 }
 
+#header-top #fictitious-logo {
+  padding: 2vh 2vw;
+  border: 1px dashed #fff;
+  color: #fff;
+}
+
 #header-top #flex-end {
   margin-top: 5vh;
   padding-top: 1.5vh;
