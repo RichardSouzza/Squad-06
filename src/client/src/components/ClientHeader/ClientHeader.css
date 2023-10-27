@@ -101,12 +101,9 @@
   gap: 1vw;
 }
 
-.flex-end {
-  justify-content: end;
-}
-
 .ClientHeader .flex-end {
-  margin-right: 4vw;
+  justify-content: end;
+  padding-right: 4vw;
 }
 
 #header-bottom .raised-button {

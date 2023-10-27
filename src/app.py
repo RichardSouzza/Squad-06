@@ -17,6 +17,6 @@ def client():
     return render_template("index.html")
 
 
-# @app.route("/client/dam")
-# def dam():
-#     return render_template("dam.html")
+@app.route("/client/dam")
+def dam():
+    return render_template("index.html")

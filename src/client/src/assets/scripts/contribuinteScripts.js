@@ -1,4 +1,4 @@
-export default function addRedBorders() {
+export function addRedBorders() {
     const body = document.getElementsByTagName('body')[0];
     const DAMs = document.getElementsByClassName('dam-row');
     for (let dam of DAMs) {
@@ -15,5 +15,13 @@ export default function addRedBorders() {
         rightBorder.style.left = `calc(${damRect.right}px - 0.75rem)`;
         rightBorder.style.top = `calc(${damRect.y}px + 0.25rem)`;
         body.appendChild(rightBorder);
+    }
+}
+
+
+export function addRedirects() {
+    const tableAnchors = document.getElementsByClassName('table-anchor');
+    for (let anchor of tableAnchors) {
+        anchor.addEventListener('click', () => {window.location.href='client/dam'});
     }
 }

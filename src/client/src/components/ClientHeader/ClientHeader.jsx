@@ -1,7 +1,36 @@
+import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Bell from '../../assets/images/bell.svg';
+import Download from '../../assets/images/download.svg';
+import Gmail from '../../assets/images/gmail.svg';
+import Print from '../../assets/images/print.svg';
+import WhatsApp from '../../assets/images/whatsapp.svg';
+import { assignDAMHeaderFunctions } from '../../assets/scripts/damScripts';
 import './ClientHeader.css';
 
-export default function ClientHeader() {
+function HeaderBottomDefault() {
+  return (
+    <div id="header-bottom">
+      <button className="raised-button">Todos</button>
+      <button className="raised-button">A vencer (0)</button>
+      <button className="raised-button">Vencidos (3)</button>
+    </div>
+  )
+}
+
+function HeaderBottomDAM() {
+  useEffect(() => {assignDAMHeaderFunctions()});
+  return (
+    <div className="flex-end" id="header-bottom">
+      <button className="icon-button" id="whatsapp-btn"><img src={WhatsApp} /></button>
+      <button className="icon-button" id="email-btn"><img src={Gmail} /></button>
+      <button className="icon-button" id="download-btn"><img src={Download} /></button>
+      <button className="icon-button" id="print-btn"><img src={Print} /></button>
+    </div>
+  )
+}
+
+export default function ClientHeader({ type }) {
   return (
     <header className="ClientHeader">
       <div id="header-top">
@@ -33,11 +62,15 @@ export default function ClientHeader() {
         </div>
       </div>
       
-      <div id="header-bottom">
-        <button className="raised-button">Todos</button>
-        <button className="raised-button">A vencer (0)</button>
-        <button className="raised-button">Vencidos (3)</button>
-      </div>
+      {type === "dam" ? <HeaderBottomDAM /> : <HeaderBottomDefault />}
     </header>
   );
 }
+
+ClientHeader.propTypes = {
+  type: PropTypes.string
+};
+
+ClientHeader.defaultProps = {
+  type: 'default'
+};

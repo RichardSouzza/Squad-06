@@ -2,13 +2,14 @@ import { useEffect } from 'react';
 import ClientHeader from '../components/ClientHeader/ClientHeader';
 import Footer from '../components/Footer/Footer';
 import Code from '../assets/images/code-01.svg'
-import addRedBorders from '../assets/scripts/addRedBorders';
-import '../assets/styles/Contribuinte.css';
+import { addRedBorders, addRedirects } from '../assets/scripts/contribuinteScripts';
+import '../assets/styles/client.css';
 
 export default function Contribuinte() {
   document.title = 'Portal do Contribuinte';
   useEffect(() => {
-    setTimeout(function() {
+    addRedirects();
+    setTimeout(() => {
       addRedBorders();
     }, 2000);
   });
@@ -35,8 +36,8 @@ export default function Contribuinte() {
                 <td>Setembro de 2023</td>
                 <td>25/09/2023</td>
                 <td className="align-right">1.000,00</td>
-                <td className="table-anchor" onClick="window.location.href='client/dam'">Gerar</td>
-                <td className="table-anchor" onClick="window.location.href='client/dam'">Exibir</td>
+                <td className="table-anchor">Gerar</td>
+                <td className="table-anchor">Exibir</td>
               </tr>
               <tr className="space"></tr>
               <tr className="dam-row">
@@ -44,7 +45,7 @@ export default function Contribuinte() {
                 <td>Setembro de 2023</td>
                 <td>15/09/2023</td>
                 <td className="align-right">17,00</td>
-                <td className="table-anchor" onClick="window.location.href='client/dam'">Gerar</td>
+                <td className="table-anchor">Gerar</td>
                 <td className="table-anchor"></td>
               </tr>
               <tr className="space"></tr>
@@ -53,7 +54,7 @@ export default function Contribuinte() {
                 <td>Setembro de 2023</td>
                 <td>15/09/2023</td>
                 <td className="align-right">2,00</td>
-                <td className="table-anchor" onClick="window.location.href='client/dam'">Gerar</td>
+                <td className="table-anchor">Gerar</td>
                 <td className="table-anchor"></td>
               </tr>
             </tbody>
