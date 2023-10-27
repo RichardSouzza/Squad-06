@@ -3,9 +3,10 @@ import { useNavigate } from "react-router-dom";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import addMask from '../assets/scripts/addMask';
-import '../assets/styles/Login.css';
+import '../assets/styles/login.css';
 
 export default function Login() {
+  document.title = 'Login';
   const navigate = useNavigate();
   useEffect(() => {
     const input = document.getElementById('identification');
