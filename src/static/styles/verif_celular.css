@@ -11,7 +11,6 @@
     --fonte-secundaria: 'Montserrat', sans-serif
 }
 
-
 body{
     background-color: var(--cor-fundo);
     margin: 0;
@@ -27,7 +26,6 @@ body{
     display: flex;
     justify-content: center;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
 }
 
 .cabecalho__logo{
@@ -77,8 +75,6 @@ body{
     color: #2C2C2C;
     font-size: 18px;
     font-weight: 300;
-
-
 }
 
 .principal__login__verifbotao{

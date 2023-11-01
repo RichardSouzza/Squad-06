@@ -1,0 +1,116 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.responsive-table {
+  width: 100%;
+  padding: 0 1rem;
+  overflow-x: auto;
+}
+
+table {
+  margin: 1vh auto;
+  border-collapse: collapse;
+}
+
+thead th {
+  color: #141414;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.25rem 0;
+  font-family: var(--secondary-font);
+}
+
+thead th div {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+thead th div p, thead th div img {
+  cursor: pointer;
+}
+
+tbody .space {
+  height: 2vh;
+  border: none;
+}
+
+.red-border {
+  width: 0.25rem;
+  height: 2rem;
+  border-radius: 1rem;
+  position: absolute;
+  background-color: #f00;
+}
+
+tbody td {
+  padding: 0.875rem 2rem;
+  background-color: #fefefe;
+  text-align: center;
+  font-family: var(--secondary-font);
+}
+
+tbody td:first-child {
+  border-radius: 0.375rem 0 0 0.375rem;
+  box-shadow: 0 0 0 1px #d1d1d1;
+}
+
+tbody td:not(:first-child):not(:last-child) {
+  box-shadow: 0 -1px 0 0 #d1d1d1, 0 1px 0 0 #d1d1d1;
+}
+
+tbody td:last-child {
+  border-radius: 0 0.375rem 0.375rem 0;
+  box-shadow: -1px 0 0 #fefefe, 0 0 0 1px #d1d1d1;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.text-red {
+  color: #FF4646;
+}
+
+.table-anchor {
+  color: #0500ff;
+  cursor: pointer;
+}
+
+.alert-box {
+  display: none;
+  position: fixed;
+  top: 50;
+  border: 1px solid #efeff0;
+  border-radius: 0.625rem;
+  background-color: #fff;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.alert-box div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 5vw;
+  gap: 2vh;
+  font-weight: 700;
+  font-family: var(--secondary-font);
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.alert-box button {
+  border: 3px solid #a6a6a6;
+  border-radius: 1.25rem;
+  padding: 1rem 5rem;
+  background-color: #0b99c9;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.125rem;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}

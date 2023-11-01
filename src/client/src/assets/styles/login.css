@@ -1,0 +1,51 @@
+main {
+  position: relative;
+}
+
+.floatCard {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  min-width: 360px;
+  padding: 4vh 3vw;
+  border-radius: 0.5rem;
+  gap: 2vh;
+  position: absolute;
+  top: -8vh;
+  background-color: var(--accent-background-color);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 0.875rem;
+}
+
+.floatCard form {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
+
+.floatCard input[type=text] {
+  padding: 2vh 1vw;
+  border: 1px solid #a6a6a6;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.floatCard input[type=submit] {
+  padding: 2vh 0;
+  border: 0.125rem solid #a6a6a6;
+  border-radius: 1.25rem;
+  background-color: #0b99c9;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1006px) {
+  .floatCard {
+    width: 100%;
+    max-width: 360px;
+  }
+}
