@@ -1,3 +1,6 @@
+import DamFile from '../data/DAM.pdf';
+
+
 let whatsappAlert;
 let emailAlert;
 
@@ -58,17 +61,15 @@ function sendByEmail() {
 
 
 function downloadDAM() {
-  const damUrl = '../src/assets/data/DAM.pdf';
   var a = document.createElement('a');
-  a.href = damUrl;
+  a.href = DamFile;
   a.download = 'DAM.pdf';
   a.click();
 }
 
 
 function printDAM() {
-  const damUrl = '../src/assets/data/DAM.pdf';
-  window.location.href = damUrl;
+  window.location.href = DamFile;
 }
 
 
