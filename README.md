@@ -47,6 +47,20 @@ npm install
 npm run dev
 ```
 
+## Compilação do React
+
+1. Acesse a pasta `client`:
+
+```sh
+cd src/client
+```
+
+2. Compilar aplicativo:
+
+```sh
+npm run build
+```
+
 ## Execução Flask
 
 1. Instale as dependências:
