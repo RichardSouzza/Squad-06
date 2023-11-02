@@ -6,93 +6,93 @@ let emailAlert;
 
 
 function closeAlerts() {
-  closeWhatsAppAlert();
-  closeEmailAlert();
-  document.removeEventListener('click', clickHandler);
+    closeWhatsAppAlert();
+    closeEmailAlert();
+    document.removeEventListener('click', clickHandler);
 }
 
 
 function clickHandler(event) {
-  if (!whatsappAlert.contains(event.target)) {
-      closeAlerts()
-  }
+    if (!whatsappAlert.contains(event.target)) {
+        closeAlerts()
+    }
 }
 
 
 function setClickHandlerEventListener() {
-  setTimeout(() => {
-      document.addEventListener('click', clickHandler);
-  }, 0);
+    setTimeout(() => {
+        document.addEventListener('click', clickHandler);
+    }, 0);
 }
 
 
 function showWhatsAppAlert() {
-  closeAlerts();
-  whatsappAlert.style.display = 'block';
-  setClickHandlerEventListener();
+    closeAlerts();
+    whatsappAlert.style.display = 'block';
+    setClickHandlerEventListener();
 }
 
 
 function closeWhatsAppAlert() {
-  whatsappAlert.style.display = 'none';
+    whatsappAlert.style.display = 'none';
 }
 
 
 function sendByWhatsApp() {
-  closeWhatsAppAlert();
+    closeWhatsAppAlert();
 }
 
 
 function showEmailAlert() {
-  closeAlerts();
-  emailAlert.style.display = 'block';
-  setClickHandlerEventListener();
+    closeAlerts();
+    emailAlert.style.display = 'block';
+    setClickHandlerEventListener();
 }
 
 
 function closeEmailAlert() {
-  emailAlert.style.display = 'none';
+    emailAlert.style.display = 'none';
 }
 
 
 function sendByEmail() {
-  closeEmailAlert();
+    closeEmailAlert();
 }
 
 
 function downloadDAM() {
-  var a = document.createElement('a');
-  a.href = DamFile;
-  a.download = 'DAM.pdf';
-  a.click();
+    var a = document.createElement('a');
+    a.href = DamFile;
+    a.download = 'DAM.pdf';
+    a.click();
 }
 
 
 function printDAM() {
-  window.location.href = DamFile;
+    window.location.href = DamFile;
 }
 
 
 function assign(element, func) {
-  element.addEventListener('click', () => {func()})
+    element.addEventListener('click', () => { func() })
 }
 
 export function assignDAMHeaderFunctions() {
-  const whatsappButton = document.getElementById('whatsapp-btn');
-  const emailButton = document.getElementById('email-btn');
-  const downloadButton = document.getElementById('download-btn');
-  const printButton = document.getElementById('print-btn');
-  assign(whatsappButton, showWhatsAppAlert);
-  assign(emailButton, showEmailAlert);
-  assign(downloadButton, downloadDAM);
-  assign(printButton, printDAM);
+    const whatsappButton = document.getElementById('whatsapp-btn');
+    const emailButton = document.getElementById('email-btn');
+    const downloadButton = document.getElementById('download-btn');
+    const printButton = document.getElementById('print-btn');
+    assign(whatsappButton, showWhatsAppAlert);
+    assign(emailButton, showEmailAlert);
+    assign(downloadButton, downloadDAM);
+    assign(printButton, printDAM);
 }
 
 export function assignDAMFunctions() {
-  whatsappAlert = document.getElementById('whatsapp-alert');
-  emailAlert = document.getElementById('email-alert');
-  const sendByWhatsAppBtn = document.getElementById('send-dam-whatsapp');
-  const sendByEmailBtn = document.getElementById('send-dam-email');
-  assign(sendByWhatsAppBtn, sendByWhatsApp);
-  assign(sendByEmailBtn, sendByEmail);
+    whatsappAlert = document.getElementById('whatsapp-alert');
+    emailAlert = document.getElementById('email-alert');
+    const sendByWhatsAppBtn = document.getElementById('send-dam-whatsapp');
+    const sendByEmailBtn = document.getElementById('send-dam-email');
+    assign(sendByWhatsAppBtn, sendByWhatsApp);
+    assign(sendByEmailBtn, sendByEmail);
 }
