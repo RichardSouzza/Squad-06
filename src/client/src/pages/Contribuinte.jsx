@@ -8,10 +8,8 @@ import '../assets/styles/client.css';
 export default function Contribuinte() {
   document.title = 'Portal do Contribuinte';
   useEffect(() => {
+    addRedBorders();
     addRedirects();
-    setTimeout(() => {
-      addRedBorders();
-    }, 2000);
   });
   
   return (
