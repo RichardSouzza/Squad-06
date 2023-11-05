@@ -13,7 +13,7 @@ export default function Login() {
     const form = document.getElementById('form');
     input.pattern = '^\\d{2}\\.?\\d{3}\\.?\\d{3}\\/?\\d{4}-?\\d{2}|\\d{3}\\.?\\d{3}\\.?\\d{3}-?\\d{2}$';
     input.addEventListener('keyup', () => {addMask(input)});
-    form.addEventListener('submit', () => {navigate('/client')});
+    form.addEventListener('submit', () => {navigate('/verification')});
   });
 
   return (

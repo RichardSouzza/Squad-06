@@ -12,6 +12,11 @@ def login():
     return render_template("index.html")
 
 
+@app.route("/verification")
+def verification():
+    return render_template("index.html")
+
+
 @app.route("/client")
 def client():
     return render_template("index.html")

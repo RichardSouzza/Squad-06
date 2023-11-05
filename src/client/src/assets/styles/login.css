@@ -1,17 +1,13 @@
-main {
-  position: relative;
-}
-
 .floatCard {
   display: flex;
   flex-direction: column;
   width: 30vw;
   min-width: 360px;
+  margin-top: -8vh;
+  margin-bottom: 4vh;
   padding: 4vh 3vw;
   border-radius: 0.5rem;
   gap: 2vh;
-  position: absolute;
-  top: -8vh;
   background-color: var(--accent-background-color);
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   font-size: 0.875rem;
@@ -28,6 +24,36 @@ main {
   border: 1px solid #a6a6a6;
   border-radius: 0.25rem;
   font-size: 0.9rem;
+}
+
+.floatCard .radio {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  padding: 2vh 2vw;
+  gap: 2vw;
+  overflow-x: auto;
+  font-size: 1rem;
+}
+
+.floatCard .radio input, .floatCard .radio label {
+  cursor: pointer;
+}
+
+.floatCard input[type=radio] {
+  width: 1.5rem;
+  height: 1.5rem;
+  appearance: none;
+  border: 1px solid var(--border-color);
+  border-radius: 100%;
+  padding: 3px;
+  transition: 0.2s linear;
+}
+
+.floatCard input[type=radio]:checked {
+  background-clip: content-box;
+  background-color: var(--border-color);
 }
 
 .floatCard input[type=submit] {
