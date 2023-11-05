@@ -2,9 +2,10 @@
 
 :root {
   --background-color: #f4f4f4;
-  --header-background-color: #1f629d;
   --accent-background-color: #fff;
+  --header-background-color: #1f629d;
   --anchor-font-color: #0b99c9;
+  --border-color: #a6a6a6;
 }
 
 * {
@@ -14,6 +15,10 @@
   font-family: Montserrat, sans-serif;
 }
 
+p {
+  font-size: 0.875rem;
+}
+
 .body {
   display: flex;
   flex-direction: column;
@@ -21,13 +26,17 @@
   background-color: var(--background-color);
 }
 
-.hide {
-  visibility: hidden;
-}
-
 .anchor {
   color: var(--anchor-font-color);
   font-weight: 600;
   text-wrap: nowrap;
   cursor: pointer;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.semibold {
+  font-weight: 600;
 }
