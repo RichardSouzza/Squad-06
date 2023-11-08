@@ -40,3 +40,9 @@ p {
 .semibold {
   font-weight: 600;
 }
+
+@media screen and (max-width: 720px) {
+  :root {
+    font-size: 14px;
+  }
+}
