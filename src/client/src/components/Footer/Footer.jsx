@@ -16,7 +16,7 @@ export default function Footer({ contactVisibility }) {
           <li>Sugestões</li>
         </ul>
       </div>
-      <div>
+      <div id="certify">
         <img src={DigitalCertify} alt="Certificação digital" />
       </div>
       <div id="sac">
