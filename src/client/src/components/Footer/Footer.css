@@ -36,9 +36,6 @@
   flex-direction: column;
   align-items: center;
   height: 4rem;
-  position: absolute;
-  right: 14vw;
-  bottom: 8vh;
   gap: 2vh;
   color: #0B99C9;
   font-weight: 700;
