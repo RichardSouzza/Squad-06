@@ -75,10 +75,6 @@ tbody td:nth-last-child(3) {
   text-align: right;
 }
 
-.text-red {
-  color: #FF4646;
-}
-
 .table-anchor {
   color: #0500ff;
   cursor: pointer;

@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
   --background-color: #f4f4f4;
   --accent-background-color: #fff;
   --header-background-color: #1f629d;
   --anchor-font-color: #0b99c9;
-  --border-color: #a6a6a6;
+  --light-border-color: #c2c2c2;
+  --dark-border-color: #a6a6a6;
 }
 
 * {
@@ -37,8 +38,24 @@ p {
   visibility: hidden;
 }
 
+.text-red {
+  color: #ff4646;
+}
+
+.span-red {
+  color: #ff0303;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+}
+
 .semibold {
   font-weight: 600;
+}
+
+.bold {
+  font-weight: 700;
 }
 
 @media screen and (max-width: 720px) {
