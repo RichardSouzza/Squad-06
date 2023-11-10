@@ -17,6 +17,11 @@ def verification():
     return render_template("index.html")
 
 
+@app.route("/pin-verification")
+def pin_verification():
+    return render_template("index.html")
+
+
 @app.route("/client")
 def client():
     return render_template("index.html")

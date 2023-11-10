@@ -29,7 +29,7 @@
 .floatCard .radio {
   display: flex;
   align-items: center;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--dark-border-color);
   border-radius: 0.25rem;
   padding: 2vh 2vw;
   gap: 2vw;
@@ -45,7 +45,7 @@
   width: 1.5rem;
   height: 1.5rem;
   appearance: none;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--dark-border-color);
   border-radius: 100%;
   padding: 3px;
   transition: 0.2s linear;
@@ -53,7 +53,29 @@
 
 .floatCard input[type=radio]:checked {
   background-clip: content-box;
-  background-color: var(--border-color);
+  background-color: var(--dark-border-color);
+}
+
+.floatCard .pin-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1.5vw;
+}
+
+.floatCard .pin-input {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 1px solid var(--light-border-color);
+  font-size: 1.75rem;
+  font-weight: 300;
+  text-align: center;
+  appearance: none;
+  -moz-appearance: textfield;
+}
+
+.floatCard .pin-input::-webkit-outer-spin-button,
+.floatCard .pin-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
 .floatCard input[type=submit] {
@@ -67,6 +89,25 @@
   font-weight: 700;
   letter-spacing: 1px;
   cursor: pointer;
+}
+
+.floatCard #info {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.floatCard .icon-button {
+  border: 1px solid var(--dark-border-color);
+  border-radius: 0.25rem;
+  padding: 2vh 0;
+  position: relative;
+  background-color: transparent;
+}
+
+.floatCard .icon-button img {
+  position: absolute;
+  left: 18%;
 }
 
 @media screen and (max-width: 1006px) {
