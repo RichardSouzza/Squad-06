@@ -25,7 +25,7 @@ export default function PINVerification() {
     closeOnClick: false,
     pauseOnHover: false,
   });
-  const attemptsLimitError = () => toast.info('Suas tentativas acabaram', {
+  const attemptsLimitError = () => toast.warning('Suas tentativas acabaram', {
     autoClose: false,
     closeOnClick: false,
     pauseOnHover: false,
