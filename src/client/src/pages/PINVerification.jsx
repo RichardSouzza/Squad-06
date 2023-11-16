@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import { notify, error, limitError } from '../assets/scripts/toasts';
 import { assignInputFunctions, generatePIN, verifyPIN } from '../assets/scripts/verificationScripts';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
@@ -13,40 +14,43 @@ export default function PINVerification() {
   const navigate = useNavigate();
   let defaultPIN = generatePIN();
   let toastNotifyText = `Seu PIN é: ${defaultPIN}`;
-  const notify = () => toast.info(toastNotifyText, {
-    autoClose: false,
-    closeOnClick: false,
-    pauseOnHover: false,
-    draggable: false,
-    progress: undefined,
-  });
-  const error = () => toast.error('PIN inválido', {
-    autoClose: 5000,
-    closeOnClick: false,
-    pauseOnHover: false,
-  });
-  const attemptsLimitError = () => toast.warning('Suas tentativas acabaram', {
-    autoClose: false,
-    closeOnClick: false,
-    pauseOnHover: false,
-    draggable: false,
-    progress: undefined,
-  });
+  const toastErrorText = 'PIN inválido';
+  const toastLimitErrorText = 'Suas tentativas acabaram';
+
   function regeneratePIN() {
     toast.dismiss();
     defaultPIN = generatePIN();
     toastNotifyText = `Seu novo PIN é: ${defaultPIN}`;
-    notify();
+    notify(toastNotifyText);
   }
-
+  
   useEffect(() => {
-    notify();
+    notify(toastNotifyText);
     assignInputFunctions();
     const floatCard = document.getElementsByClassName('floatCard')[0];
     const form = document.getElementById('form');
     const attempts = document.getElementById('attempts');
     const regeneratePINButton = document.getElementById('regeneratePINButton');
     regeneratePINButton.addEventListener('click', regeneratePIN);
+    
+    function verifyPINError() {
+      error(toastErrorText);
+      attempts.innerText -= 1;
+    }
+
+    function attemptsLimitError() {
+      toast.dismiss();
+      error(toastErrorText);
+      limitError(toastLimitErrorText);
+      for (let input of floatCard.getElementsByTagName('input')) {
+        input.disabled = true;
+      }
+      regeneratePINButton.removeEventListener('click', regeneratePIN);
+      regeneratePINButton.addEventListener('click', () => {
+        toast.dismiss();
+        limitError(toastLimitErrorText);
+      });
+    }
 
     form.addEventListener('submit', (event) => {
       event.preventDefault();
@@ -60,20 +64,9 @@ export default function PINVerification() {
       if (verify) {
         navigate('/client');
       } else {
-        error();
-        attempts.innerText -= 1;
+        verifyPINError();
         if (attempts.innerText == 0) {
-          toast.dismiss();
-          error();
           attemptsLimitError();
-          for (let input of floatCard.getElementsByTagName('input')) {
-            input.disabled = true;
-          }
-          regeneratePINButton.removeEventListener('click', regeneratePIN);
-          regeneratePINButton.addEventListener('click', () => {
-            toast.dismiss();
-            attemptsLimitError();
-          });
         }
         for (let input of inputs) {
           input.value = '';
