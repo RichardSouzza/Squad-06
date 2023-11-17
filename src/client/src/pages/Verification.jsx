@@ -26,7 +26,7 @@ export default function Verification() {
           <p>O e-mail mostrado não é seu? <a className="anchor">Clique aqui</a>.</p>
         </div>
       </main>
-      <Footer contactVisibility="hide"/>
+      <Footer />
     </div>
   );
 }

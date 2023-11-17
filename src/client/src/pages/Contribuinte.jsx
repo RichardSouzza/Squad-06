@@ -24,8 +24,8 @@ export default function Contribuinte() {
                 <th><div><p>Competência</p><img src={Code} /></div></th>
                 <th><div><p>Vencimento</p><img src={Code} /></div></th>
                 <th><div><p>Valor</p><img src={Code} /></div></th>
-                <th><div><p>Cobrança</p><img src={Code} /></div></th>
-                <th><div><p>Parcela</p><img src={Code} /></div></th>
+                <th><div><p>Cobrança</p></div></th>
+                <th><div><p>Parcela</p></div></th>
               </tr>
             </thead>
             <tbody>

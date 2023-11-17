@@ -123,7 +123,7 @@ export default function PINVerification() {
         </div>
       </main>
       <ToastContainer />
-      <Footer contactVisibility="hide"/>
+      <Footer />
     </div>
   );
 }

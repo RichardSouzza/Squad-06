@@ -34,10 +34,6 @@ p {
   cursor: pointer;
 }
 
-.hide {
-  visibility: hidden;
-}
-
 .text-red {
   color: #ff4646;
 }
