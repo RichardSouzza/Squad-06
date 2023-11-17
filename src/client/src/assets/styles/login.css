@@ -26,34 +26,13 @@
   font-size: 0.9rem;
 }
 
-.floatCard .radio {
-  display: flex;
-  align-items: center;
+.floatCard .email-box {
   border: 1px solid var(--dark-border-color);
   border-radius: 0.25rem;
   padding: 2vh 2vw;
-  gap: 2vw;
   overflow-x: auto;
   font-size: 1rem;
-}
-
-.floatCard .radio input, .floatCard .radio label {
-  cursor: pointer;
-}
-
-.floatCard input[type=radio] {
-  width: 1.5rem;
-  height: 1.5rem;
-  appearance: none;
-  border: 1px solid var(--dark-border-color);
-  border-radius: 100%;
-  padding: 3px;
-  transition: 0.2s linear;
-}
-
-.floatCard input[type=radio]:checked {
-  background-clip: content-box;
-  background-color: var(--dark-border-color);
+  cursor: default;
 }
 
 .floatCard .pin-container {
