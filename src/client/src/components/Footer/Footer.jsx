@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="Footer">
       <div id="contact">
         <img src={Logo} alt="Logo Ágape" />
-        <ul>
+        <ul className="anchor">
           <li>Suporte</li>
           <li>Contato</li>
           <li>Reclamações</li>
