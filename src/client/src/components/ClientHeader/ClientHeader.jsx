@@ -31,6 +31,7 @@ function HeaderBottomDAM() {
 }
 
 export default function ClientHeader({ type }) {
+  const identification = localStorage.getItem('identification');
   return (
     <header className="ClientHeader">
       <div id="header-top">
@@ -52,8 +53,8 @@ export default function ClientHeader({ type }) {
       <div id="header-center">
         <div>
           <p className="welcome">BEM-VINDO!</p>
-          <p className="credential">CPF / CNPJ: 894.076.010-72</p>
-          <p className="credential">CONTRIBUINTE: CONTRIBUINTE TESTE UNIT</p>
+          <p className="credential">CPF / CNPJ: {identification}</p>
+          <p className="credential">CONTRIBUINTE: #</p>
         </div>
 
         <div id="header-right">

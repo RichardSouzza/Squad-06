@@ -18,6 +18,8 @@ export default function Login() {
     form.addEventListener('submit', (event) => {
       event.preventDefault();
       if (validateID(input.value)) {
+        event.preventDefault();
+        localStorage.setItem('identification', input.value);
         navigate('/verification');
       } else {
         if (input.value.length === 14) {
@@ -43,7 +45,7 @@ export default function Login() {
         </div>
       </main>
       <ToastContainer />
-      <Footer contactVisibility="hide"/>
+      <Footer />
     </div>
   );
 }
