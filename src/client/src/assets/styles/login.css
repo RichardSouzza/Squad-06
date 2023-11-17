@@ -105,6 +105,11 @@
   background-color: transparent;
 }
 
+.floatCard .icon-button:disabled {
+  filter: grayscale(1);
+  cursor: default;
+}
+
 .floatCard .icon-button img {
   position: absolute;
   left: 18%;
