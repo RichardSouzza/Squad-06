@@ -119,7 +119,7 @@ export default function PINVerification() {
             <p className="text-xs">Ainda não recebeu o código? Verifique a caixa de spam do seu e-mail ou escolha uma das opções a seguir:</p>
           </div>
           <button className="icon-button anchor" id="resendPINButton" disabled><img src={Undo} alt="Reenviar" />REENVIAR CÓDIGO</button>
-          <button className="icon-button anchor">RECEBER DE OUTRAS FORMAS</button>
+          <p>Não recebeu o código? <a className="anchor">Clique aqui</a>.</p>
         </div>
       </main>
       <ToastContainer />
