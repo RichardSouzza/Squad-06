@@ -19,7 +19,7 @@ thead th {
   color: #141414;
   font-size: 1rem;
   font-weight: 600;
-  padding: 0.25rem 0;
+  padding: 0.25rem 0 0.5rem;
 }
 
 thead th div {
@@ -32,52 +32,35 @@ thead th div p, thead th div img {
   cursor: pointer;
 }
 
-tbody .dam-row {
-  position: relative;
-}
-
 tbody .space {
   height: 2vh;
-  border: none;
 }
 
-.red-border {
-  width: 0.25rem;
-  height: 2rem;
-  border-radius: 1rem;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #f00;
-}
-
-tbody .dam-row {
+.pagination {
+  display: flex;
+  border: 1px solid var(--light-border-color);
   border-radius: 0.375rem;
-  box-shadow: 0 0 0 1px #d1d1d1;
+  list-style: none;
+  color: var(--anchor-font-color);
+  background-color: var(--accent-background-color);
 }
 
-tbody td {
-  padding: 0.875rem 2rem;
-  border-radius: 0.375rem 0 0 0.375rem;
-  background-color: #fefefe;
-  text-align: center;
+.page-item {
+  padding: 0.5rem 0.75rem;
 }
 
-tbody td:not(:first-child):not(.red-border):not(:last-child) {
-  border-radius: 0;
+.page-item:not(:last-child) {
+  border-right: 1px solid var(--light-border-color);
 }
 
-tbody td:nth-last-child(3) {
-  border-radius: 0 0.375rem 0.375rem 0 !important;
-}
-
-.align-right {
-  text-align: right;
-}
-
-.table-anchor {
-  color: #0500ff;
+.page-link {
   cursor: pointer;
+}
+
+.active {
+  color: #fff;
+  background-color: var(--anchor-font-color) !important;
+  transition: .2s;
 }
 
 .alert-box {
