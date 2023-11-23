@@ -1,0 +1,46 @@
+.dam-row {
+  position: relative;
+  border-radius: 0.375rem;
+  box-shadow: 0 0 0 1px #d1d1d1;
+}
+.dam-row td {
+  padding: 0.875rem 2rem;
+  border-radius: 0.375rem 0 0 0.375rem;
+  background-color: #fefefe;
+  text-align: center;
+}
+
+.dam-row td:not(:first-child):not(.red-border):not(:last-child) {
+  border-radius: 0;
+}
+
+.dam-row td:nth-last-child(3) {
+  border-radius: 0 0.375rem 0.375rem 0 !important;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.table-anchor {
+  color: #0500ff;
+  cursor: pointer;
+}
+
+.red-border {
+  width: 0.25rem;
+  height: 2rem;
+  border-radius: 1rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #f00;
+}
+
+.red-border.left {
+  left: 0.5rem;
+}
+
+.red-border.right {
+  right: 0.5rem;
+}
