@@ -5,6 +5,23 @@ export function addRedirects() {
     }
 }
 
+function strToDate(dateString) {
+    const [day, month, year] = dateString.split('/');
+    return new Date(`${year}-${month}-${day}`);
+}
+
+export function filterByNearDueDate(array) {
+    const today = new Date();
+    const compareDates = (dueDate) => dueDate >= today;
+    return array.filter(item => compareDates(strToDate(item.due_date)));
+}
+
+export function filterByExpired(array) {
+    const today = new Date();
+    const compareDates = (dueDate) => dueDate < today;
+    return array.filter(item => compareDates(strToDate(item.due_date)));
+}
+
 export function sortByName(array, key, order, altKey) {
     function compareStr(a, b) {
         const strA = a[key].toUpperCase();
@@ -35,10 +52,6 @@ export function sortByName(array, key, order, altKey) {
 }
 
 export function sortByDate(array, key, order) {
-    function strToDate(dateString) {
-        const [day, month, year] = dateString.split('/');
-        return new Date(`${year}-${month}-${day}`);
-    }
     const sortedArray = array.sort((a, b) => strToDate(a[key]) - strToDate(b[key]));
     if (order === 'desc') {
         sortedArray.reverse();

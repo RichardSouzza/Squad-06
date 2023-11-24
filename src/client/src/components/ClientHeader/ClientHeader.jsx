@@ -8,15 +8,21 @@ import WhatsApp from '../../assets/images/whatsapp.svg';
 import { assignDAMHeaderFunctions } from '../../assets/scripts/damScripts';
 import './ClientHeader.css';
 
-function HeaderBottomDefault() {
+function HeaderBottomDefault({disableFilter, filterByNearDueDate, filterByExpired}) {
   return (
     <div id="header-bottom">
-      <button className="raised-button">Todos</button>
-      <button className="raised-button">A vencer (0)</button>
-      <button className="raised-button">Vencidos (3)</button>
+      <button className="raised-button" onClick={disableFilter}>Todos</button>
+      <button className="raised-button" onClick={filterByNearDueDate}>A vencer (0)</button>
+      <button className="raised-button" onClick={filterByExpired}>Vencidos (3)</button>
     </div>
   )
 }
+
+HeaderBottomDefault.propTypes = {
+  disableFilter: PropTypes.func,
+  filterByNearDueDate: PropTypes.func,
+  filterByExpired: PropTypes.func
+};
 
 function HeaderBottomDAM() {
   useEffect(() => {assignDAMHeaderFunctions()});
@@ -30,7 +36,7 @@ function HeaderBottomDAM() {
   )
 }
 
-export default function ClientHeader({ type }) {
+export default function ClientHeader({ type, headerBehaviors }) {
   const identification = localStorage.getItem('identification');
   return (
     <header className="ClientHeader">
@@ -63,15 +69,25 @@ export default function ClientHeader({ type }) {
         </div>
       </div>
       
-      {type === "dam" ? <HeaderBottomDAM /> : <HeaderBottomDefault />}
+      {
+        type === "dam" 
+          ? <HeaderBottomDAM />
+          : <HeaderBottomDefault 
+              disableFilter={headerBehaviors.disableFilter} 
+              filterByNearDueDate={headerBehaviors.filterByNearDueDate} 
+              filterByExpired={headerBehaviors.filterByExpired} 
+            />
+      }
     </header>
   );
 }
 
 ClientHeader.propTypes = {
-  type: PropTypes.string
+  type: PropTypes.string,
+  headerBehaviors: PropTypes.object
 };
 
 ClientHeader.defaultProps = {
-  type: 'default'
+  type: 'default',
+  headerBehaviors: {}
 };

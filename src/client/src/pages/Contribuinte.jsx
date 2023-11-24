@@ -5,22 +5,34 @@ import DamTableRow from '../components/DamTableRow/DamTableRow';
 import Footer from '../components/Footer/Footer';
 import Code from '../assets/images/code-01.svg'
 import { data } from '../assets/data/userData';
-import { addRedirects, sortByAmount, sortByDate, sortByName
+import { addRedirects, filterByNearDueDate, filterByExpired, sortByAmount, sortByDate, sortByName
 } from '../assets/scripts/contribuinteScripts';
 import '../assets/styles/client.css';
 
 export default function Contribuinte() {
   document.title = 'Portal do Contribuinte';
-  const orderOptions = ['asc', 'desc']
-  const [tributeOrder, setTributeOrder] = useState(0)
-  const [competenceOrder, setCompetenceOrder] = useState(0)
-  const [dueDateOrder, setDueDateOrder] = useState(0)
-  const [amountOrder, setAmountOrder] = useState(0)
+  const orderOptions = ['asc', 'desc'];
+  const [tributeOrder, setTributeOrder] = useState(0);
+  const [competenceOrder, setCompetenceOrder] = useState(0);
+  const [dueDateOrder, setDueDateOrder] = useState(0);
+  const [amountOrder, setAmountOrder] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
-  const items = data;
+  const [items, setItems] = useState(data);
   const itemsPerPage = 10;
   const pageCount = Math.ceil(items.length / itemsPerPage);
   
+  function disableFilter() {
+    setItems(data);
+  }
+  
+  function filterByNear() {
+    setItems(filterByNearDueDate(data));
+  }
+  
+  function filterByExpr() {
+    setItems(filterByExpired(data));
+  }
+
   function calcOrder(key) {
     return (key + 1) % 2;
   }
@@ -58,7 +70,7 @@ export default function Contribuinte() {
 
   return (
     <div className="body">
-      <ClientHeader />
+      <ClientHeader headerBehaviors={{'disableFilter': disableFilter, 'filterByNearDueDate': filterByNear, 'filterByExpired': filterByExpr}} />
       <main>
         <div className="responsive-table">
           <table>
