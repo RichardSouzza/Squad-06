@@ -24,6 +24,7 @@ export default function Contribuinte() {
   const [items, setItems] = useState(data);
   const itemsPerPage = 10;
   const pageCount = Math.ceil(items.length / itemsPerPage);
+  sortByDate(items, 'due_date', orderOptions[dueDateOrder]);
   
   function disableFilter() {
     setItems(data);
@@ -75,7 +76,6 @@ export default function Contribuinte() {
     setTotalItemsNumber(data.length);
     setDueDateItemsNumber(filterByNearDueDate(data).length);
     setExpiredItemsNumber(filterByExpired(data).length);
-    handleDueDataOrder();
   }, []);
 
   return (
