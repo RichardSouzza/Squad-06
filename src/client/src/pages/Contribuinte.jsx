@@ -11,6 +11,10 @@ import '../assets/styles/client.css';
 
 export default function Contribuinte() {
   document.title = 'Portal do Contribuinte';
+  const [totalItemsNumber, setTotalItemsNumber] = useState(0);
+  const [dueDateItemsNumber, setDueDateItemsNumber] = useState(0);
+  const [expiredItemsNumber, setExpiredItemsNumber] = useState(0);
+  const itemsNumber = [totalItemsNumber, dueDateItemsNumber, expiredItemsNumber];
   const orderOptions = ['asc', 'desc'];
   const [tributeOrder, setTributeOrder] = useState(0);
   const [competenceOrder, setCompetenceOrder] = useState(0);
@@ -66,11 +70,21 @@ export default function Contribuinte() {
     (currentPage + 1) * itemsPerPage
   );
 
-  useEffect(() => {addRedirects()});
+  useEffect(() => {
+    addRedirects();
+    setTotalItemsNumber(data.length);
+    setDueDateItemsNumber(filterByNearDueDate(data).length);
+    setExpiredItemsNumber(filterByExpired(data).length);
+  }, []);
 
   return (
     <div className="body">
-      <ClientHeader headerBehaviors={{'disableFilter': disableFilter, 'filterByNearDueDate': filterByNear, 'filterByExpired': filterByExpr}} />
+      <ClientHeader headerBehaviors={{
+        'itemsNumber': itemsNumber,
+        'disableFilter': disableFilter,
+        'filterByNearDueDate': filterByNear,
+        'filterByExpired': filterByExpr}}
+      />
       <main>
         <div className="responsive-table">
           <table>

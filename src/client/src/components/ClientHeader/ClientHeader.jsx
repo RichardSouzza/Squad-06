@@ -8,17 +8,19 @@ import WhatsApp from '../../assets/images/whatsapp.svg';
 import { assignDAMHeaderFunctions } from '../../assets/scripts/damScripts';
 import './ClientHeader.css';
 
-function HeaderBottomDefault({disableFilter, filterByNearDueDate, filterByExpired}) {
+function HeaderBottomDefault({itemsNumber, disableFilter, filterByNearDueDate, filterByExpired}) {
+  const [totalItemsNumber, dueDateItemsNumber, expiredItemsNumber] = itemsNumber;
   return (
     <div id="header-bottom">
-      <button className="raised-button" onClick={disableFilter}>Todos</button>
-      <button className="raised-button" onClick={filterByNearDueDate}>A vencer (0)</button>
-      <button className="raised-button" onClick={filterByExpired}>Vencidos (3)</button>
+      <button className="raised-button" onClick={disableFilter}>Todos ({totalItemsNumber})</button>
+      <button className="raised-button" onClick={filterByNearDueDate}>A vencer ({dueDateItemsNumber})</button>
+      <button className="raised-button" onClick={filterByExpired}>Vencidos ({expiredItemsNumber})</button>
     </div>
   )
 }
 
 HeaderBottomDefault.propTypes = {
+  itemsNumber: PropTypes.array,
   disableFilter: PropTypes.func,
   filterByNearDueDate: PropTypes.func,
   filterByExpired: PropTypes.func
@@ -72,7 +74,8 @@ export default function ClientHeader({ type, headerBehaviors }) {
       {
         type === "dam" 
           ? <HeaderBottomDAM />
-          : <HeaderBottomDefault 
+          : <HeaderBottomDefault
+              itemsNumber={headerBehaviors.itemsNumber}
               disableFilter={headerBehaviors.disableFilter} 
               filterByNearDueDate={headerBehaviors.filterByNearDueDate} 
               filterByExpired={headerBehaviors.filterByExpired} 
