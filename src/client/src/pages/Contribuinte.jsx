@@ -75,6 +75,7 @@ export default function Contribuinte() {
     setTotalItemsNumber(data.length);
     setDueDateItemsNumber(filterByNearDueDate(data).length);
     setExpiredItemsNumber(filterByExpired(data).length);
+    handleDueDataOrder();
   }, []);
 
   return (
