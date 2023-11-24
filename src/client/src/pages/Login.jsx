@@ -2,9 +2,10 @@ import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import { error } from '../assets/scripts/toasts';
+import { cpf } from 'cpf-cnpj-validator'; 
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import { addMask, validateID } from '../assets/scripts/loginScripts';
+import { addMask } from '../assets/scripts/loginScripts';
 import '../assets/styles/login.css';
 
 export default function Login() {
@@ -17,8 +18,7 @@ export default function Login() {
     input.addEventListener('keyup', () => addMask(input));
     form.addEventListener('submit', (event) => {
       event.preventDefault();
-      if (validateID(input.value)) {
-        event.preventDefault();
+      if (cpf.isValid(input.value)) {
         localStorage.setItem('identification', input.value);
         navigate('/verification');
       } else {

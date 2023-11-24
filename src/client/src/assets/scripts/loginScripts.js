@@ -7,9 +7,3 @@ export function addMask(input) {
         input.value = !x[2] ? x[1] : x[1] + '.' + x[2] + (x[3] ? '.' : '') + x[3] + (x[4] ? '-' + x[4] : '');
     }
 }
-
-export function validateID(id) {
-    const invalidCPF =  '000.000.000-00';
-    const invalidCNPJ =  '00.000.000/0000-00';
-    return ![invalidCPF, invalidCNPJ].includes(id);
-}
