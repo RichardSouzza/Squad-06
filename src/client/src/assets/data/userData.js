@@ -10,7 +10,7 @@ const initialData = [
   {
     tribute: 'ALUGUEL 2 - ALUGUEL(1.50%)',
     competence: 'Dezembro de 2023',
-    due_date: '20/12/2023',
+    due_date: '20/10/2023',
     amount: '17,00',
     billing: 'Gerar',
     installment: '',
