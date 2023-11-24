@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import PropTypes from 'prop-types';
 import Bell from '../../assets/images/bell.svg';
 import Download from '../../assets/images/download.svg';
@@ -39,6 +40,7 @@ function HeaderBottomDAM() {
 }
 
 export default function ClientHeader({ type, headerBehaviors }) {
+  const navigate = useNavigate();
   const identification = localStorage.getItem('identification');
   return (
     <header className="ClientHeader">
@@ -53,7 +55,7 @@ export default function ClientHeader({ type, headerBehaviors }) {
           </div>
 
           <div className="exit">
-            <button className="exit-button"><p>Sair</p></button>
+            <button className="exit-button" onClick={() => navigate("/")}><p>Sair</p></button>
           </div>
         </div>
       </div>
