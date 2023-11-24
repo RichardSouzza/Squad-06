@@ -10,8 +10,8 @@ export default function DamTableRow({ data }) {
       <td className="align-right">{data.amount}</td>
       <td className="table-anchor">{data.billing}</td>
       <td className="table-anchor">{data.installment}</td>
-      <div className="red-border left"></div>
-      <div className="red-border right"></div>
+      <td className="red-border left"></td>
+      <td className="red-border right"></td>
     </tr>
   );
 }
