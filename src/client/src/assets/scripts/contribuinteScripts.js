@@ -5,9 +5,11 @@ export function addRedirects() {
     }
 }
 
-function strToDate(dateString) {
+export function strToDate(dateString) {
     const [day, month, year] = dateString.split('/');
-    return new Date(`${year}-${month}-${day}`);
+    let date = new Date(`${year}-${month}-${day}`);
+    date.setDate(date.getDate() + 1);
+    return date;
 }
 
 export function filterByNearDueDate(array) {

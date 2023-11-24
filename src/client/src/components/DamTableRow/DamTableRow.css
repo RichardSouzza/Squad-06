@@ -3,7 +3,7 @@
   border-radius: 0.375rem;
   box-shadow: 0 0 0 1px #d1d1d1;
 }
-.dam-row td:not(.red-border) {
+.dam-row td:not(.dam-border) {
   padding: 0.875rem 2rem;
   border-radius: 0.375rem 0 0 0.375rem;
   background-color: #fefefe;
@@ -27,20 +27,31 @@
   cursor: pointer;
 }
 
-.red-border {
+.dam-border {
   width: 0.25rem;
   height: 2rem;
   border-radius: 1rem !important;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.green {
+  background-color: #0f0;
+}
+
+.orange {
+  background-color: #ffa500;
+}
+
+.red {
   background-color: #f00;
 }
 
-.red-border.left {
+.dam-border.left {
   left: 0.5rem;
 }
 
-.red-border.right {
+.dam-border.right {
   right: 0.5rem;
 }

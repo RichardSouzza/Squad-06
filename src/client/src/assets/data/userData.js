@@ -2,7 +2,7 @@ const initialData = [
   {
     tribute: 'IPTU - IPTU GRAND(100.00%)',
     competence: 'Dezembro de 2023',
-    due_date: '10/12/2023',
+    due_date: '24/11/2023',
     amount: '1.000,00',
     billing: 'Gerar',
     installment: 'Exibir',
