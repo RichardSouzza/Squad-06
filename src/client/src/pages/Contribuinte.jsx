@@ -81,7 +81,7 @@ export default function Contribuinte() {
 
   return (
     <div className="body">
-      <ClientHeader headerBehaviors={{
+      <ClientHeader behaviors={{
         'itemsNumber': itemsNumber,
         'disableFilter': disableFilter,
         'filterByNearDueDate': filterByNear,

@@ -9,22 +9,19 @@ import WhatsApp from '../../assets/images/whatsapp.svg';
 import { assignDAMHeaderFunctions } from '../../assets/scripts/damScripts';
 import './ClientHeader.css';
 
-function HeaderBottomDefault({itemsNumber, disableFilter, filterByNearDueDate, filterByExpired}) {
-  const [totalItemsNumber, dueDateItemsNumber, expiredItemsNumber] = itemsNumber;
+function HeaderBottomDefault({ behaviors }) {
+  const [totalItemsNumber, dueDateItemsNumber, expiredItemsNumber] = behaviors.itemsNumber;
   return (
     <div id="header-bottom">
-      <button className="raised-button" onClick={disableFilter}>Todos ({totalItemsNumber})</button>
-      <button className="raised-button" onClick={filterByNearDueDate}>A vencer ({dueDateItemsNumber})</button>
-      <button className="raised-button" onClick={filterByExpired}>Vencidos ({expiredItemsNumber})</button>
+      <button className="raised-button" onClick={behaviors.disableFilter}>Todos ({totalItemsNumber})</button>
+      <button className="raised-button" onClick={behaviors.filterByNearDueDate}>A vencer ({dueDateItemsNumber})</button>
+      <button className="raised-button" onClick={behaviors.filterByExpired}>Vencidos ({expiredItemsNumber})</button>
     </div>
   )
 }
 
 HeaderBottomDefault.propTypes = {
-  itemsNumber: PropTypes.array,
-  disableFilter: PropTypes.func,
-  filterByNearDueDate: PropTypes.func,
-  filterByExpired: PropTypes.func
+  behaviors: PropTypes.object
 };
 
 function HeaderBottomDAM() {
@@ -39,7 +36,7 @@ function HeaderBottomDAM() {
   )
 }
 
-export default function ClientHeader({ type, headerBehaviors }) {
+export default function ClientHeader({ type, behaviors }) {
   const navigate = useNavigate();
   const identification = localStorage.getItem('identification');
   return (
@@ -76,12 +73,7 @@ export default function ClientHeader({ type, headerBehaviors }) {
       {
         type === "dam" 
           ? <HeaderBottomDAM />
-          : <HeaderBottomDefault
-              itemsNumber={headerBehaviors.itemsNumber}
-              disableFilter={headerBehaviors.disableFilter} 
-              filterByNearDueDate={headerBehaviors.filterByNearDueDate} 
-              filterByExpired={headerBehaviors.filterByExpired} 
-            />
+          : <HeaderBottomDefault behaviors={behaviors} />
       }
     </header>
   );
@@ -89,10 +81,10 @@ export default function ClientHeader({ type, headerBehaviors }) {
 
 ClientHeader.propTypes = {
   type: PropTypes.string,
-  headerBehaviors: PropTypes.object
+  behaviors: PropTypes.object
 };
 
 ClientHeader.defaultProps = {
   type: 'default',
-  headerBehaviors: {}
+  behaviors: {}
 };
