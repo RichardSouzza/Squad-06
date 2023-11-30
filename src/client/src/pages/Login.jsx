@@ -4,9 +4,9 @@ import { ToastContainer } from 'react-toastify';
 import { error } from '../assets/scripts/toasts';
 import { cpf } from 'cpf-cnpj-validator'; 
 import Header from "../components/Header/Header";
+import FloatCard from '../components/FloatCard/FloatCard';
 import Footer from "../components/Footer/Footer";
 import { addMask } from '../assets/scripts/loginScripts';
-import '../assets/styles/login.css';
 
 export default function Login() {
   document.title = 'Login';
@@ -35,14 +35,16 @@ export default function Login() {
     <div className="body">
       <Header />
       <main>
-        <div className="floatCard">
-          <p>Entrar com CPF ou CNPJ:</p>
-          <form id="form">
-            <input type="text" id="identification" name="identification" inputMode="numeric" title="11 números para CPF ou 14 números para CNPJ" required></input>
-            <input type="submit" value="ENTRAR"></input>
-          </form>
-          <p>Não consegue acessar? <a className="anchor">Clique aqui</a>.</p>
-        </div>
+        <FloatCard content={
+          <>
+            <p>Entrar com CPF ou CNPJ:</p>
+            <form id="form">
+              <input type="text" id="identification" name="identification" inputMode="numeric" title="11 números para CPF ou 14 números para CNPJ" required></input>
+              <input className="button" type="submit" value="ENTRAR"></input>
+            </form>
+            <p>Não consegue acessar? <a className="anchor">Clique aqui</a>.</p>
+          </>
+        } />
       </main>
       <ToastContainer />
       <Footer />

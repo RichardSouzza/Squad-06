@@ -5,10 +5,10 @@ import { notify, error, limitError } from '../assets/scripts/toasts';
 import { assignInputFunctions, generatePIN, verifyPIN } from '../assets/scripts/verificationScripts';
 import Countdown from "react-countdown";
 import Header from '../components/Header/Header';
+import FloatCard from '../components/FloatCard/FloatCard';
 import Footer from '../components/Footer/Footer';
 import Undo from '../assets/images/undo.svg';
 import 'react-toastify/dist/ReactToastify.css';
-import '../assets/styles/login.css';
 
 let countdownTime;
 
@@ -53,7 +53,7 @@ export default function PINVerification() {
 
     notify(toastNotifyText);
     assignInputFunctions();
-    const floatCard = document.getElementsByClassName('floatCard')[0];
+    const floatCard = document.getElementsByClassName('FloatCard')[0];
     const form = document.getElementById('form');
     const attempts = document.getElementById('attempts');
     const resendPINButton = document.getElementById('resendPINButton');
@@ -102,25 +102,27 @@ export default function PINVerification() {
     <div className="body">
       <Header />
       <main>
-        <div className="floatCard">
-          <p>Informe o código recebido abaixo:</p>
-          <form id="form">
-            <div className="pin-container">
-              <input className="pin-input" type="number" name="pin-1" autoComplete="off" inputMode="numeric" required />
-              <input className="pin-input" type="number" name="pin-2" autoComplete="off" inputMode="numeric" required />
-              <input className="pin-input" type="number" name="pin-3" autoComplete="off" inputMode="numeric" required />
-              <input className="pin-input" type="number" name="pin-4" autoComplete="off" inputMode="numeric" required />
+        <FloatCard content={
+          <>
+            <p>Informe o código recebido abaixo:</p>
+            <form id="form">
+              <div className="pin-container">
+                <input className="pin-input" type="number" name="pin-1" autoComplete="off" inputMode="numeric" required />
+                <input className="pin-input" type="number" name="pin-2" autoComplete="off" inputMode="numeric" required />
+                <input className="pin-input" type="number" name="pin-3" autoComplete="off" inputMode="numeric" required />
+                <input className="pin-input" type="number" name="pin-4" autoComplete="off" inputMode="numeric" required />
+              </div>
+              <input id="submit" type="submit" value="AVANÇAR" />
+            </form>
+            <div id="info">
+              <p className="text-xs">Você possui <span className="span-red bold" id="attempts">5</span> tentativas restantes.</p>
+              <p className="text-xs">Aguarde <Countdown date={countdownTime} key={resetKey} renderer={renderer} onComplete={countdownOnComplete} /> para pedir um novo código.</p>
+              <p className="text-xs">Ainda não recebeu o código? Verifique a caixa de spam do seu e-mail ou escolha uma das opções a seguir:</p>
             </div>
-            <input id="submit" type="submit" value="AVANÇAR" />
-          </form>
-          <div id="info">
-            <p className="text-xs">Você possui <span className="span-red bold" id="attempts">5</span> tentativas restantes.</p>
-            <p className="text-xs">Aguarde <Countdown date={countdownTime} key={resetKey} renderer={renderer} onComplete={countdownOnComplete} /> para pedir um novo código.</p>
-            <p className="text-xs">Ainda não recebeu o código? Verifique a caixa de spam do seu e-mail ou escolha uma das opções a seguir:</p>
-          </div>
-          <button className="icon-button anchor" id="resendPINButton" disabled><img src={Undo} alt="Reenviar" />REENVIAR CÓDIGO</button>
-          <p>Não recebeu o código? <a className="anchor">Clique aqui</a>.</p>
-        </div>
+            <button className="icon-button anchor" id="resendPINButton" disabled><img src={Undo} alt="Reenviar" />REENVIAR CÓDIGO</button>
+            <p>Não recebeu o código? <a className="anchor">Clique aqui</a>.</p>
+          </>
+        } />
       </main>
       <ToastContainer />
       <Footer />

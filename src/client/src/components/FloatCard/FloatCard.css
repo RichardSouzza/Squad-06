@@ -1,4 +1,4 @@
-.floatCard {
+.FloatCard {
   display: flex;
   flex-direction: column;
   width: 30vw;
@@ -13,20 +13,20 @@
   font-size: 0.875rem;
 }
 
-.floatCard form {
+.FloatCard form {
   display: flex;
   flex-direction: column;
   gap: 3vh;
 }
 
-.floatCard input[type=text] {
+.FloatCard input[type=text] {
   padding: 2vh 1vw;
   border: 1px solid #a6a6a6;
   border-radius: 0.25rem;
   font-size: 0.9rem;
 }
 
-.floatCard .email-box {
+.FloatCard .email-box {
   border: 1px solid var(--dark-border-color);
   border-radius: 0.25rem;
   padding: 2vh 2vw;
@@ -35,13 +35,13 @@
   cursor: default;
 }
 
-.floatCard .pin-container {
+.FloatCard .pin-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1.5vw;
 }
 
-.floatCard .pin-input {
+.FloatCard .pin-input {
   width: 100%;
   aspect-ratio: 1;
   border: 1px solid var(--light-border-color);
@@ -52,12 +52,12 @@
   -moz-appearance: textfield;
 }
 
-.floatCard .pin-input::-webkit-outer-spin-button,
-.floatCard .pin-input::-webkit-inner-spin-button {
+.FloatCard .pin-input::-webkit-outer-spin-button,
+.FloatCard .pin-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-.floatCard input[type=submit] {
+.FloatCard .button, input[type=submit] {
   padding: 2vh 0;
   border: 0.125rem solid #a6a6a6;
   border-radius: 1.25rem;
@@ -70,13 +70,13 @@
   cursor: pointer;
 }
 
-.floatCard #info {
+.FloatCard #info {
   display: flex;
   flex-direction: column;
   gap: 1vh;
 }
 
-.floatCard .icon-button {
+.FloatCard .icon-button {
   border: 1px solid var(--dark-border-color);
   border-radius: 0.25rem;
   padding: 2vh 0;
@@ -84,18 +84,18 @@
   background-color: transparent;
 }
 
-.floatCard .icon-button:disabled {
+.FloatCard .icon-button:disabled {
   filter: grayscale(1);
   cursor: default;
 }
 
-.floatCard .icon-button img {
+.FloatCard .icon-button img {
   position: absolute;
   left: 18%;
 }
 
 @media screen and (max-width: 1006px) {
-  .floatCard {
+  .FloatCard {
     width: 100%;
     max-width: 360px;
   }
