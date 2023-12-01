@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import PropTypes from 'prop-types';
 import DamTableRow from '../DamTableRow/DamTableRow';
 import FloatCard from '../FloatCard/FloatCard';
@@ -13,6 +14,7 @@ export default function BillingGenerator({ damData }) {
   const [dueDate, setDueDate] = useState(dateToStrYMD(new Date));
   const modeOptions = ['preview', 'generate'];
   const [mode, setMode] = useState(modeOptions[0]);
+  const navigate = useNavigate();
 
   function handleIssueDateChange(event) {
     setIssueDate(event.target.value);
@@ -40,7 +42,11 @@ export default function BillingGenerator({ damData }) {
             <tbody>
               {data.map((damData, index) => (
                 <React.Fragment key={index}>
-                  <DamTableRow key={index} data={damData} />
+                  <DamTableRow
+                    key={index}
+                    data={damData}
+                    behaviors={{'handleBillingGenerator': () => navigate('/client/dam')}}
+                  />
                   <tr className="space" />
                 </React.Fragment>
               ))}
