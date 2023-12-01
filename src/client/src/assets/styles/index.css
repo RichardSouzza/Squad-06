@@ -34,12 +34,12 @@ p {
   cursor: pointer;
 }
 
-.text-red {
-  color: #ff4646;
+span {
+  color: #ff0303;
 }
 
-.span-red {
-  color: #ff0303;
+.text-red {
+  color: #ff4646;
 }
 
 .text-xs {

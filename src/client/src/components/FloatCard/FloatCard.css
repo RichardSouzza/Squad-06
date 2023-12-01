@@ -19,7 +19,8 @@
   gap: 3vh;
 }
 
-.FloatCard input[type=text] {
+.FloatCard input[type=text],
+.FloatCard input[type=date] {
   padding: 2vh 1vw;
   border: 1px solid #a6a6a6;
   border-radius: 0.25rem;

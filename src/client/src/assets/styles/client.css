@@ -63,14 +63,27 @@ tbody .space {
   transition: .2s;
 }
 
+.pop-up {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  border: 1px solid #efeff0;
+  border-radius: 0.625rem;
+  background-color: var(--accent-background-color);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  transform: translate(-50%, -50%);
+}
+
 .alert-box {
   display: none;
   position: fixed;
-  top: 50;
+  top: 50%;
   border: 1px solid #efeff0;
   border-radius: 0.625rem;
-  background-color: #fff;
+  background-color: var(--accent-background-color);
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  transform: translateY(-50%);
 }
 
 .alert-box div {

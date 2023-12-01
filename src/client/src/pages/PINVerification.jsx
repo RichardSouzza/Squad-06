@@ -13,7 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 let countdownTime;
 
 function renderer({ minutes, seconds }) {
-  return (<span className="span-red bold">{`${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`}</span>);
+  return (<span className="bold">{`${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`}</span>);
 }
 
 export default function PINVerification() {
@@ -115,7 +115,7 @@ export default function PINVerification() {
               <input id="submit" type="submit" value="AVANÇAR" />
             </form>
             <div id="info">
-              <p className="text-xs">Você possui <span className="span-red bold" id="attempts">5</span> tentativas restantes.</p>
+              <p className="text-xs">Você possui <span className="bold" id="attempts">5</span> tentativas restantes.</p>
               <p className="text-xs">Aguarde <Countdown date={countdownTime} key={resetKey} renderer={renderer} onComplete={countdownOnComplete} /> para pedir um novo código.</p>
               <p className="text-xs">Ainda não recebeu o código? Verifique a caixa de spam do seu e-mail ou escolha uma das opções a seguir:</p>
             </div>
