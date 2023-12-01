@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ReactPaginate from 'react-paginate';
+import BillingGenerator from '../components/BillingGenerator/BillingGenerator';
 import ClientHeader from '../components/ClientHeader/ClientHeader';
 import DamTableRow from '../components/DamTableRow/DamTableRow';
 import Footer from '../components/Footer/Footer';
 import Code from '../assets/images/code-01.svg'
 import { data } from '../assets/data/userData';
-import { addRedirects, filterByNearDueDate, filterByExpired, sortByAmount, sortByDate, sortByName
+import { filterByNearDueDate, filterByExpired, sortByAmount, sortByDate, sortByName
 } from '../assets/scripts/contribuinteScripts';
 import '../assets/styles/client.css';
 
@@ -20,11 +21,14 @@ export default function Contribuinte() {
   const [competenceOrder, setCompetenceOrder] = useState(0);
   const [dueDateOrder, setDueDateOrder] = useState(0);
   const [amountOrder, setAmountOrder] = useState(0);
+  const billingGeneratorRef = useRef(null);
+  const [billingGeneratorData, setBillingGeneratorData] = useState([]);
+  const [billingGeneratorVisibility, setBillingGeneratorVisibility] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
   const [items, setItems] = useState(data);
   const itemsPerPage = 10;
   const pageCount = Math.ceil(items.length / itemsPerPage);
-  
+
   function disableFilter() {
     setItems(data);
   }
@@ -61,6 +65,22 @@ export default function Contribuinte() {
     sortByAmount(items, 'amount', orderOptions[amountOrder]);
   }
 
+  function handleBillingGenerator(damData) {
+    setBillingGeneratorData([damData]);
+    setBillingGeneratorVisibility(!billingGeneratorVisibility);
+  }
+
+  function handleOutsideClick(event) {
+    if (
+      billingGeneratorRef.current &&
+      !billingGeneratorRef.current.contains(event.target) &&
+      !event.target.classList.contains('table-anchor') &&
+      !event.target.classList.contains('button')
+    ) {
+      setBillingGeneratorVisibility(false);
+    }
+  }
+
   function handlePageClick({ selected }) {
     setCurrentPage(selected);
   }
@@ -71,14 +91,18 @@ export default function Contribuinte() {
   );
 
   useEffect(() => {
-    addRedirects();
     setTotalItemsNumber(data.length);
     setDueDateItemsNumber(filterByNearDueDate(data).length);
     setExpiredItemsNumber(filterByExpired(data).length);
     handleDueDataOrder();
+
+    document.addEventListener('click', handleOutsideClick);
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  
   return (
     <div className="body">
       <ClientHeader behaviors={{
@@ -103,7 +127,10 @@ export default function Contribuinte() {
             <tbody>
               {displayedItems.map((itemData, index) => (
                 <React.Fragment key={index}>
-                  <DamTableRow key={index} data={itemData} />
+                  <DamTableRow
+                    data={itemData}
+                    behaviors={{'handleBillingGenerator': handleBillingGenerator}}
+                  />
                   <tr className="space" />
                 </React.Fragment>
               ))}
@@ -130,6 +157,11 @@ export default function Contribuinte() {
           activeClassName="active"
           renderOnZeroPageCount={null}
         />
+        {billingGeneratorVisibility && (
+          <div ref={billingGeneratorRef}>
+            <BillingGenerator damData={billingGeneratorData} />
+          </div>
+      )}
       </main>
       <Footer />
     </div>

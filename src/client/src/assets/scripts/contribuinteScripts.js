@@ -1,15 +1,27 @@
-export function addRedirects() {
-    const tableAnchors = document.getElementsByClassName('table-anchor');
-    for (let anchor of tableAnchors) {
-        anchor.addEventListener('click', () => { window.location.href = 'client/dam' });
-    }
-}
-
 export function strToDate(dateString) {
     const [day, month, year] = dateString.split('/');
     let date = new Date(`${year}-${month}-${day}`);
     date.setDate(date.getDate() + 1);
     return date;
+}
+
+export function dateToStr(date) {
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+}
+
+export function dateToStrYMD(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+export function dateStrToDMY(dateString) {
+    const [year, month, day] = dateString.split('-');
+    return `${day}/${month}/${year}`;
 }
 
 export function filterByNearDueDate(array) {
@@ -71,3 +83,18 @@ export function sortByAmount(array, key, order) {
     }
     return sortedArray;
 }
+
+export const months = {
+    1: 'Janeiro',
+    2: 'Fevereiro',
+    3: 'Março',
+    4: 'Abril',
+    5: 'Maio',
+    6: 'Junho',
+    7: 'Julho',
+    8: 'Agosto',
+    9: 'Setembro',
+    10: 'Outubro',
+    11: 'Novembro',
+    12: 'Dezembro'
+};

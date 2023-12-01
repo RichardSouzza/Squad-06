@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { strToDate } from '../../assets/scripts/contribuinteScripts';
 import './DamTableRow.css';
 
-export default function DamTableRow({ data }) {
+export default function DamTableRow({ data, behaviors }) {
   const [borderColor, setBorderColor] = useState('');
   
   function handleBorderColor() {
@@ -26,7 +26,7 @@ export default function DamTableRow({ data }) {
       <td>{data.competence}</td>
       <td>{data.due_date}</td>
       <td className="align-right">{data.amount}</td>
-      <td className="table-anchor">{data.billing}</td>
+      <td className="table-anchor" onClick={() => behaviors.handleBillingGenerator(data)}>{data.billing}</td>
       <td className="table-anchor">{data.installment}</td>
       <td className={`dam-border ${borderColor} left`}></td>
       <td className={`dam-border ${borderColor} right`}></td>
@@ -35,5 +35,6 @@ export default function DamTableRow({ data }) {
 }
 
 DamTableRow.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.object,
+  behaviors: PropTypes.object
 };

@@ -1,0 +1,46 @@
+.BillingGenerator {
+  width: auto;
+  text-wrap: nowrap;
+}
+
+.BillingGenerator .button {
+  width: 20vw;
+  min-width: 7rem;
+  max-width: 12rem;
+  padding: 1vh 0;
+  font-size: 0.75rem;
+}
+
+.BillingGenerator form {
+  flex-direction: row;
+  align-items: center;
+}
+
+.BillingGenerator form label {
+  text-wrap: wrap;
+}
+
+.BillingGenerator input[type=text] {
+  width: 7rem;
+  text-align: center;
+}
+.BillingGenerator input[type=date] {
+  width: 13rem;
+  text-align: center;
+}
+
+.BillingGenerator #form-buttons {
+  display: flex;
+  gap: 1vw;
+}
+
+.BillingGenerator #form-buttons .button {
+  width: auto;
+}
+
+@media screen and (max-width: 1260px) {
+  .BillingGenerator {
+    width: 80vw;
+    max-width: none;
+  }
+}
