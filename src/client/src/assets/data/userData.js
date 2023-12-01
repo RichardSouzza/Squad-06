@@ -1,12 +1,6 @@
+import { dateToStr } from "../scripts/contribuinteScripts";
+
 const initialData = [
-  {
-    tribute: 'IPTU - IPTU GRAND(100.00%)',
-    competence: 'Dezembro de 2023',
-    due_date: '24/11/2023',
-    amount: '1.000,00',
-    billing: 'Gerar',
-    installment: 'Exibir',
-  },
   {
     tribute: 'ALUGUEL 2 - ALUGUEL(1.50%)',
     competence: 'Dezembro de 2023',
@@ -14,6 +8,14 @@ const initialData = [
     amount: '17,00',
     billing: 'Gerar',
     installment: '',
+  },
+  {
+    tribute: 'IPTU - IPTU GRAND(100.00%)',
+    competence: 'Dezembro de 2023',
+    due_date: dateToStr(new Date()),
+    amount: '1.000,00',
+    billing: 'Gerar',
+    installment: 'Exibir',
   },
   {
     tribute: 'LIX - COLETA DE LIXO(1.00%)',
