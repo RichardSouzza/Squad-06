@@ -7,9 +7,9 @@ export default function DamTableRow({ data, behaviors }) {
   const [borderColor, setBorderColor] = useState('');
   
   function handleBorderColor() {
-    const today = new Date().getDate();
-    let dueDate = strToDate(data.due_date).getDate();
-    if (today === dueDate) {
+    const today = new Date();
+    let dueDate = strToDate(data.due_date);
+    if (today.getDate() === dueDate.getDate()) {
       setBorderColor('orange');
     } else if (today > dueDate) {
       setBorderColor('red');
