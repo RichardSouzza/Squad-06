@@ -5,8 +5,8 @@
 
 .BillingGenerator .button {
   width: 20vw;
-  min-width: 7rem;
-  max-width: 12rem;
+  min-width: 9rem;
+  max-width: 11rem;
   padding: 1vh 0;
   font-size: 0.75rem;
 }
@@ -14,6 +14,8 @@
 .BillingGenerator form {
   flex-direction: row;
   align-items: center;
+  padding: 0 1vw;
+  overflow-x: auto;
 }
 
 .BillingGenerator form label {
@@ -26,6 +28,7 @@
 }
 .BillingGenerator input[type=date] {
   width: 13rem;
+  min-width: 10rem;
   text-align: center;
 }
 
