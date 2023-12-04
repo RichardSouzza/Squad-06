@@ -24,6 +24,18 @@ export function dateStrToDMY(dateString) {
     return `${day}/${month}/${year}`;
 }
 
+export function strToFloat(floatString) {
+    return parseFloat(floatString.replace('.', '').replace(',', '.'));
+}
+
+export function floatToStr(float) {
+    const options = {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+    };
+    return float.toLocaleString('pt-BR', options);
+}
+
 export function filterByNearDueDate(array) {
     const today = new Date();
     const compareDates = (dueDate) => dueDate >= today;
@@ -74,9 +86,6 @@ export function sortByDate(array, key, order) {
 }
 
 export function sortByAmount(array, key, order) {
-    function strToFloat(floatString) {
-        return parseFloat(floatString.replace('.', '').replace(',', '.'));
-    }
     const sortedArray = array.sort((a, b) => strToFloat(a[key]) - strToFloat(b[key]));
     if (order === 'desc') {
         sortedArray.reverse();

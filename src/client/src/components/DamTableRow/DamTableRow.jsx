@@ -27,7 +27,13 @@ export default function DamTableRow({ data, behaviors }) {
       <td>{data.due_date}</td>
       <td className="align-right">{data.amount}</td>
       <td className="table-anchor" onClick={() => behaviors.handleBillingGenerator(data)}>{data.billing}</td>
-      <td className="table-anchor">{data.installment}</td>
+      {
+        data.installment ? (
+        <td className="table-anchor" onClick={() => behaviors.handleBillingGenerator(data)}>Exibir</td>
+        ) : (
+          <td></td>
+        )
+      }
       <td className={`dam-border ${borderColor} left`}></td>
       <td className={`dam-border ${borderColor} right`}></td>
     </tr>
