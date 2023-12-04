@@ -7,7 +7,7 @@ const initialData = [
     due_date: '20/10/2023',
     amount: '17,00',
     billing: 'Gerar',
-    installment: '',
+    installment: 0,
   },
   {
     tribute: 'IPTU - IPTU GRAND(100.00%)',
@@ -15,7 +15,7 @@ const initialData = [
     due_date: dateToStr(new Date()),
     amount: '1.000,00',
     billing: 'Gerar',
-    installment: 'Exibir',
+    installment: 2,
   },
   {
     tribute: 'LIX - COLETA DE LIXO(1.00%)',
@@ -23,7 +23,7 @@ const initialData = [
     due_date: '30/12/2023',
     amount: '2,00',
     billing: 'Gerar',
-    installment: '',
+    installment: 0,
   }
 ];
 
